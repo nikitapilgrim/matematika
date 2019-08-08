@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import {Link, Route} from 'wouter';
+import StoreContext from 'storeon/react/context';
 //#if _DEBUG
 import HotManager from './HotManager';
 //#endif
+import {store} from './store/store';
+
 import Sound from 'react-sound';
 import styled from 'styled-components';
 
@@ -21,6 +24,7 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
 `;
 
 
@@ -36,15 +40,17 @@ const App = () => {
   introSound ? setIntroStatus(SoundStatus.PLAYING) : setIntroStatus(SoundStatus.PAUSED);
 
   return (
-    <Container>
-      <Sound
+    <StoreContext.Provider value={store}>
+      <Container>
+        {/*<Sound
         url={IntroSound}
         playStatus={introStatus}
-      />
-      <IntroLogo/>
-      <StageContainer sounds={{intro: {state: introSound, action: setIntroSound}}}/>
-      <Background/>
-    </Container>
+      />*/}
+        <IntroLogo/>
+        <StageContainer sounds={{intro: {state: introSound, action: setIntroSound}}}/>
+        <Background/>
+      </Container>
+    </StoreContext.Provider>
   );
 };
 
