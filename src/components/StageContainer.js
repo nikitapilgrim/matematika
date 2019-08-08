@@ -61,6 +61,10 @@ const SoundWrapper = styled.div`
   
 `;
 
+const ButtonTest = styled.button`
+  padding: 20px;
+`
+
 export const StageContainer = ({sounds}) => {
   const {dispatch, stage} = useStoreon('stage');
 
@@ -68,12 +72,15 @@ export const StageContainer = ({sounds}) => {
     <Container>
       <SoundWrapper>
         <SoundButton data={sounds.intro}/>
+        <ButtonTest onClick={()=> {
+          dispatch('next')
+        }}>TEST</ButtonTest>
       </SoundWrapper>
       <SvgContainer>
         <BgStage/>
       </SvgContainer>
       <Inner>
-        {Stages[19]()}
+        {Stages[stage]()}
       </Inner>
     </Container>
   );
