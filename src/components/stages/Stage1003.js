@@ -16,43 +16,43 @@ export const Stage1003 = () => {
         <tbody>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="2400" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="2500" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="2600" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="2700" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="2800" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="2900" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>
         <tr>
           <td className="desno">2300 &lt;</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"
+          <td className="centrirano"><Input answer="3000" type="text" className="kockicaInput2 fontclass" maxLength="5"
                                             placeholder="x"/></td>
           <td className="lijevo">&lt; 3100</td>
         </tr>

@@ -17,9 +17,10 @@ export const Stage0503 = () => {
              style="margin-top: 40px;">
         <tbody>
         <tr>
-          <td><Input /></td>
-          <td></td>
-          <td><Input /></td>
+          <td><Input answer="510"/></td>
+          <td>KM</td>
+          <td><Input answer="422"/></td>
+          <td>KM</td>
         </tr>
         </tbody>
       </table>

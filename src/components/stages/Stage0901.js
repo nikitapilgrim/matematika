@@ -17,8 +17,8 @@ export const Stage0901 = () => {
           <td className="centrirano">5∙n = 625</td>
         </tr>
         <tr>
-          <td className="centrirano">x =<Input /></td>
-          <td className="centrirano">n =<Input /></td>
+          <td className="centrirano">x =<Input answer="86"/></td>
+          <td className="centrirano">n =<Input answer="125"/></td>
         </tr>
         <tr>
           <td></td>
@@ -29,8 +29,8 @@ export const Stage0901 = () => {
           <td className="centrirano">4∙x = 348</td>
         </tr>
         <tr>
-          <td className="centrirano">a =<Input /></td>
-          <td className="centrirano">x =<Input /></td>
+          <td className="centrirano">a =<Input answer="122"/></td>
+          <td className="centrirano">x =<Input answer="87"/></td>
         </tr>
         </tbody>
       </table>

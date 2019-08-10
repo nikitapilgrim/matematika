@@ -14,27 +14,27 @@ export const Stage0701 = () => {
         <tbody>
         <tr>
           <td width="70" className="desno">560:10=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="56"/></td>
           <td width="70" className="desno">480:48=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="10"/></td>
         </tr>
         <tr>
           <td width="70" className="desno">800:100=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="8"/></td>
           <td width="70" className="desno">820:10=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="82"/></td>
         </tr>
         <tr>
           <td width="70" className="desno">750:75=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="10"/></td>
           <td width="70" className="desno">400:100=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="4"/></td>
         </tr>
         <tr>
           <td width="70" className="desno">470:10=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="47"/></td>
           <td width="70" className="desno">390:39=</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="10"/></td>
         </tr>
 
         </tbody>

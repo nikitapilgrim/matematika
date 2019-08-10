@@ -17,31 +17,31 @@ export const Stage0802 = () => {
           <td>21 =</td>
           <td> 6</td>
           <td>∙ 3 +</td>
-          <td><Input /></td>
+          <td><Input answer="3"/></td>
         </tr>
         <tr>
           <td>52 =</td>
-          <td><Input /></td>
+          <td><Input answer="8"/></td>
           <td>∙ 6 +</td>
-          <td><Input /></td>
+          <td><Input answer="4"/></td>
         </tr>
         <tr>
           <td>44 =</td>
-          <td><Input /></td>
+          <td><Input answer="5"/></td>
           <td>∙ 8 +</td>
-          <td><Input /></td>
+          <td><Input answer="4"/></td>
         </tr>
         <tr>
           <td>68 =</td>
-          <td><Input /></td>
+          <td><Input answer="7"/></td>
           <td>∙ 9 +</td>
-          <td><Input /></td>
+          <td><Input answer="5"/></td>
         </tr>
         <tr>
           <td>38 =</td>
-          <td><Input /></td>
+          <td><Input answer="9"/></td>
           <td>∙ 4 +</td>
-          <td><Input /></td>
+          <td><Input answer="2"/></td>
         </tr>
         </tbody>
       </table>

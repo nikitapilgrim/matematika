@@ -18,12 +18,12 @@ export const Stage1106 = () => {
         <tbody>
         <tr>
           <td className="desno">Udžbenik</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="10" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
           <td className="lijevo">KM</td>
         </tr>
         <tr>
           <td className="desno">Teka</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="4" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
           <td className="lijevo">KM</td>
         </tr>
 

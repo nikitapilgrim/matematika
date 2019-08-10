@@ -14,18 +14,18 @@ export const Stage0702 = () => {
         <tbody>
         <tr>
           <td className="centrirano">420:x =42</td>
-          <td className="centrirano">x =<Input /></td>
+          <td className="centrirano">x =<Input answer="10"/></td>
         </tr>
         <tr>
           <td className="centrirano">920:x =92</td>
-          <td className="centrirano">x =<Input /></td>
+          <td className="centrirano">x =<Input answer="10"/></td>
         </tr>
         <tr>
           <td className="centrirano">x:100 =4</td>
-          <td className="centrirano">x =<Input /></td>
+          <td className="centrirano">x =<Input answer="400"/></td>
         </tr>
         </tbody>
       </table>
     </div>
-);
+  );
 };

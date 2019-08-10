@@ -6,7 +6,7 @@ import BgStage from '../assets/svg/stage.svg';
 import {SoundButton} from './SoundButton';
 import Stages from './stages';
 
-const Container = styled.div`
+const Container = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,17 +63,22 @@ const SoundWrapper = styled.div`
 
 const ButtonTest = styled.button`
   padding: 20px;
-`
+`;
 
 export const StageContainer = ({sounds}) => {
   const {dispatch, stage} = useStoreon('stage');
 
   return (
-    <Container>
+    <Container onSubmit={e => e.preventDefault()} onKeyup={e => {
+      const target = e.target;
+      const form = target.closest('form');
+      const inputs = form.querySelectorAll('input');
+      //console.log(inputs)
+    }}>
       <SoundWrapper>
         <SoundButton data={sounds.intro}/>
-        <ButtonTest onClick={()=> {
-          dispatch('next')
+        <ButtonTest onClick={() => {
+          dispatch('next');
         }}>TEST</ButtonTest>
       </SoundWrapper>
       <SvgContainer>

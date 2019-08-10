@@ -26,9 +26,9 @@ export const Stage1203 = () => {
           <td className="centrirano">&#8675;</td>
         </tr>
         <tr>
-          <td className="centrirano"><Input type="text" className="kockicaInput7 fontclass" maxLength="5"/></td>
-          <td className="centrirano"><Input type="text" className="kockicaInput7 fontclass" maxLength="5"/></td>
-          <td className="centrirano"><Input type="text" className="kockicaInput7 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="674" type="text" className="kockicaInput7 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="458" type="text" className="kockicaInput7 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="164" type="text" className="kockicaInput7 fontclass" maxLength="5"/></td>
         </tr>
         </tbody>
       </table>

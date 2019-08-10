@@ -14,27 +14,27 @@ export const Stage0704 = () => {
         <tbody>
         <tr>
           <td className="desno">54∙7=</td>
-          <td><Input/></td>
+          <td><Input answer="378"/></td>
           <td className="desno">75:5=</td>
-          <td><Input/></td>
+          <td><Input answer="15"/></td>
         </tr>
         <tr>
 
         </tr>
         <tr>
           <td className="desno">36∙6=</td>
-          <td><Input/></td>
+          <td><Input answer="216"/></td>
           <td className="desno">96:8=</td>
-          <td><Input/></td>
+          <td><Input answer="12"/></td>
         </tr>
         <tr>
 
         </tr>
         <tr>
           <td className="desno">25∙8=</td>
-          <td><Input/></td>
+          <td><Input answer="200"/></td>
           <td className="desno">51:3=</td>
-          <td><Input/></td>
+          <td><Input answer="17"/></td>
         </tr>
         <tr>
 

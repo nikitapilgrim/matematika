@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link, Route} from 'wouter';
 import StoreContext from 'storeon/react/context';
+import {css} from 'styled-components';
 //#if _DEBUG
 import HotManager from './HotManager';
 //#endif
@@ -34,18 +35,23 @@ const SoundStatus = {
 };
 
 const App = () => {
-  const [introSound, setIntroSound] = useState(true);
+  const [introSound, setIntroSound] = useState(false);
   const [introStatus, setIntroStatus] = useState(null);
+  useEffect(() => {
+    introSound ? setIntroStatus(SoundStatus.PLAYING) : setIntroStatus(SoundStatus.PAUSED);
+  }, [introSound]);
 
-  introSound ? setIntroStatus(SoundStatus.PLAYING) : setIntroStatus(SoundStatus.PAUSED);
+  /*const handlerOnLoad = (e) => {
+    introSound ? setIntroStatus(SoundStatus.PLAYING) : setIntroStatus(SoundStatus.PAUSED);
+  };*/
 
   return (
     <StoreContext.Provider value={store}>
       <Container>
-        {/*<Sound
-        url={IntroSound}
-        playStatus={introStatus}
-      />*/}
+        <Sound
+          url={IntroSound}
+          playStatus={introStatus}
+        />
         <IntroLogo/>
         <StageContainer sounds={{intro: {state: introSound, action: setIntroSound}}}/>
         <Background/>

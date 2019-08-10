@@ -15,15 +15,15 @@ export const Stage0707 = () => {
         <tbody>
         <tr>
           <td className="desno">(42+63–21):7=</td>
-          <td className="centrirano"><Input/></td>
+          <td className="centrirano"><Input answer="12"/></td>
         </tr>
         <tr>
           <td className="desno">(81–36+72):9=</td>
-          <td className="centrirano"><Input/></td>
+          <td className="centrirano"><Input answer="13"/></td>
         </tr>
         <tr>
           <td className="desno">(56+64–32):8=</td>
-          <td className="centrirano"><Input/></td>
+          <td className="centrirano"><Input answer="11"/></td>
         </tr>
         </tbody>
       </table>

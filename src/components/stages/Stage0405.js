@@ -14,15 +14,15 @@ export const Stage0405 = () => {
         <tbody>
         <tr>
           <td className="centrirano">432 + 268 =</td>
-          <td className="lijevo"><Input/></td>
+          <td className="lijevo"><Input answer="700"/></td>
         </tr>
         <tr>
           <td className="centrirano">185 + 376 =</td>
-          <td className="lijevo"><Input/></td>
+          <td className="lijevo"><Input answer="561"/></td>
         </tr>
         <tr>
           <td className="centrirano">826 – 348 =</td>
-          <td className="lijevo"><Input/></td>
+          <td className="lijevo"><Input answer="478"/></td>
         </tr>
 
         </tbody>

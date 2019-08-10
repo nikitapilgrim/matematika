@@ -21,10 +21,10 @@ export const Stage0801 = () => {
           <td className="centrirano">Broj 4</td>
         </tr>
         <tr>
-          <td className="centrirano"><Input /></td>
-          <td className="centrirano"><Input /></td>
-          <td className="centrirano"><Input /></td>
-          <td className="centrirano"><Input /></td>
+          <td className="centrirano"><Input answer="35"/></td>
+          <td className="centrirano"><Input answer="42"/></td>
+          <td className="centrirano"><Input answer="63"/></td>
+          <td className="centrirano"><Input answer="28"/></td>
         </tr>
         </tbody>
       </table>

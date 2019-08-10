@@ -15,11 +15,11 @@ export const Stage1303 = () => {
              style="margin-top: 20px;">
         <tbody>
         <tr>
-          <td className="centrirano"><Input type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="1" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
           <td className="desno">kl</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="6" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
           <td className="desno">hl</td>
-          <td className="centrirano"><Input type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="8" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
           <td className="desno">dal</td>
         </tr>
 

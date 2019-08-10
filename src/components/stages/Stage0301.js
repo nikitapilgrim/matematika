@@ -15,28 +15,28 @@ export const Stage0301 = () => {
         <tbody>
         <tr>
           <td>610</td>
-          <td><Input /></td>
+          <td><Input answer="620"/></td>
           <td>630</td>
         </tr>
         <tr>
-          <td><Input /></td>
-          <td><Input /></td>
-          <td><Input /></td>
+          <td><Input answer="640"/></td>
+          <td><Input answer="650"/></td>
+          <td><Input answer="660"/></td>
         </tr>
         <tr>
-          <td><Input /></td>
-          <td><Input /></td>
+          <td><Input answer="670"/></td>
+          <td><Input answer="680"/></td>
           <td>690</td>
         </tr>
         <tr>
-          <td><Input /></td>
-          <td><Input /></td>
-          <td><Input /></td>
+          <td><Input answer="700"/></td>
+          <td><Input answer="710"/></td>
+          <td><Input answer="720"/></td>
         </tr>
         <tr>
-          <td><Input /></td>
+          <td><Input answer="730"/></td>
           <td>740</td>
-          <td><Input /></td>
+          <td><Input answer="750"/></td>
         </tr>
         </tbody>
       </table>

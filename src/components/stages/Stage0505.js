@@ -13,7 +13,7 @@ export const Stage0505 = () => {
 
       <p>Imaš na štednji 957 KM. Potrošiš 250 KM, a uskoro položiš 197 KM. Koliko poslije toga imaš na štednji?</p>
       <div className="centrirano fullwidth">
-        <div className="width90 displayinline desno"><Input /></div>
+        <div className="width90 displayinline desno"><Input answer="904"/></div>
         <div className="width90 displayinline lijevo"><h4>KM</h4></div>
       </div>
 

@@ -15,10 +15,10 @@ export const Stage1001 = () => {
              style="margin-top: 20px;">
         <tbody>
         <tr>
-          <td className="centrirano"><Input/></td>
-          <td className="centrirano"><Input/></td>
-          <td className="centrirano"><Input/></td>
-          <td className="centrirano"><Input/></td>
+          <td className="centrirano"><Input answer="10"/></td>
+          <td className="centrirano"><Input answer="100"/></td>
+          <td className="centrirano"><Input answer="1000"/></td>
+          <td className="centrirano"><Input answer="10000"/></td>
         </tr>
 
         </tbody>

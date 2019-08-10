@@ -14,19 +14,19 @@ export const Stage0305 = () => {
         <tbody>
         <tr>
           <td className="centrirano">562</td>
-          <td className="lijevo"><Input /></td>
+          <td className="lijevo"><Input answer="DLXII"/></td>
         </tr>
         <tr>
           <td className="centrirano">837</td>
-          <td className="lijevo"><Input /></td>
+          <td className="lijevo"><Input answer="DCCCXXXVII"/></td>
         </tr>
         <tr>
           <td className="centrirano">456</td>
-          <td className="lijevo"><Input /></td>
+          <td className="lijevo"><Input answer="CDLVI"/></td>
         </tr>
         <tr>
           <td className="centrirano">748</td>
-          <td className="lijevo"><Input /></td>
+          <td className="lijevo"><Input answer="DCCXLVIII"/></td>
         </tr>
         </tbody>
       </table>

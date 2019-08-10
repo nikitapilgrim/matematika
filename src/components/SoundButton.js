@@ -19,7 +19,7 @@ export const SoundButton = ({data}) => {
   return (
     <SoundContainer onClick={() => {
       setSound(!sound);
-      data.action(sound)
+      data.action(!sound)
     }}>
       {sound ? <IconOn/> : <IconOff/>}
     </SoundContainer>

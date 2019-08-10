@@ -16,13 +16,13 @@ export const Stage1005 = () => {
              style="margin-top: 20px;">
         <tbody>
         <tr>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="5995" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="5996" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="5997" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
         </tr>
         <tr>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
-          <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="5998" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
+          <td className="centrirano"><Input answer="5999" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>
         </tr>
 
         </tbody>

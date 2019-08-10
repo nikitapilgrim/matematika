@@ -12,8 +12,8 @@ export const Stage0409 = () => {
       <Subtitle>Odgovori:</Subtitle>
       <p>Zbir dva uzastopna prirodna broja je 651. Odredi te brojeve.</p>
       <div className="centrirano fullwidth">
-        <div className="width90 displayinline desno"><Input /></div>
-        <div className="width90 displayinline desno"><Input /></div>
+        <div className="width90 displayinline desno"><Input answer="325"/></div>
+        <div className="width90 displayinline desno"><Input answer="326"/></div>
       </div>
     </div>
   );

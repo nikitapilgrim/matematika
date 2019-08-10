@@ -15,18 +15,18 @@ export const Stage1304 = () => {
         <tbody>
         <tr>
           <td className="centrirano">535:5∙4=</td>
-          <td><Input type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
+          <td><Input answer="428" type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
           <td className="centrirano">328:2∙6=</td>
-          <td><Input type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
+          <td><Input answer="984" type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
         </tr>
         <tr>
 
         </tr>
         <tr>
           <td className="centrirano">156∙5:2=</td>
-          <td><Input type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
+          <td><Input answer="390" type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
           <td className="centrirano">196∙2:7=</td>
-          <td><Input type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
+          <td><Input answer="56" type="text" className="kockicaInput6 fontclass" maxLength="3"/></td>
 
         </tr>
         </tbody>

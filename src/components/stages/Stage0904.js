@@ -12,7 +12,7 @@ export const Stage0904 = () => {
       <Subtitle>Upiši odgovor:</Subtitle>
       <p>Izračunaj djeljenik ako je djelitelj 8, količnik 47 i ostatak 5.</p>
       <div className="centrirano fullwidth">
-        <div className="width90 displayinline desno"><Input/></div>
+        <div className="width90 displayinline desno"><Input answer="381"/></div>
       </div>
     </div>
   );

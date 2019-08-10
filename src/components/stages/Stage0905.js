@@ -14,7 +14,7 @@ export const Stage0905 = () => {
         litra?</p>
       <div className="centrirano fullwidth">
 
-        <div className="width90 displayinline desno"><Input /></div>
+        <div className="width90 displayinline desno"><Input answer="168"/></div>
         <div className="width90 displayinline lijevo"><h4>litara</h4></div>
       </div>
     </div>

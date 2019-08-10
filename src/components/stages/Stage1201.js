@@ -16,15 +16,15 @@ export const Stage1201 = () => {
              style="margin-top: 20px;">
         <tbody>
         <tr>
-          <td className="desno">4hm 5dam 8m+5hm 3dam 3m = <Input type="text" className="kockicaInput2 fontclass"
+          <td className="desno">4hm 5dam 8m+5hm 3dam 3m = <Input answer="991" type="text" className="kockicaInput2 fontclass"
                                                                  maxLength="5"/></td>
         </tr>
         <tr>
-          <td className="desno">2hm 11dam 12m = <Input type="text" className="kockicaInput2 fontclass" maxLength="5"/>
+          <td className="desno">2hm 11dam 12m = <Input answer="312" type="text" className="kockicaInput2 fontclass" maxLength="5"/>
           </td>
         </tr>
         <tr>
-          <td className="desno">2hm 11dam 12m = <Input type="text" className="kockicaInput2 fontclass" maxLength="5"/>
+          <td className="desno">2hm 11dam 12m = <Input  answer="593" type="text" className="kockicaInput2 fontclass" maxLength="5"/>
           </td>
         </tr>
         </tbody>

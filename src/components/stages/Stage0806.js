@@ -13,7 +13,7 @@ export const Stage0806 = () => {
       <p>Izračunaj djeljenik ako je količnik 85, djelitelj 7 i ostatak 3.</p>
       <div className="centrirano fullwidth">
         <div className="width90 displayinline lijevo"><h4>Rješenje</h4></div>
-        <div className="width90 displayinline desno"><Input /></div>
+        <div className="width90 displayinline desno"><Input answer="598"/></div>
       </div>
     </div>
   );

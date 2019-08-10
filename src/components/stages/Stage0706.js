@@ -21,9 +21,9 @@ export const Stage0706 = () => {
           <td className="centrirano">Broj 3</td>
         </tr>
         <tr>
-          <td className="centrirano"><Input /></td>
-          <td className="centrirano"><Input /></td>
-          <td className="centrirano"><Input /></td>
+          <td className="centrirano"><Input answer="140"/></td>
+          <td className="centrirano"><Input answer="280"/></td>
+          <td className="centrirano"><Input answer="20"/></td>
         </tr>
         </tbody>
       </table>

@@ -17,22 +17,22 @@ export const Stage0504 = () => {
           <td>a</td>
           <td>137</td>
           <td>256</td>
-          <td><Input /></td>
+          <td><Input answer="417"/></td>
           <td>286</td>
         </tr>
         <tr>
           <td>b</td>
           <td>425</td>
-          <td><Input /></td>
+          <td><Input answer="744"/></td>
           <td>348</td>
           <td>328</td>
         </tr>
         <tr>
           <td>a+b</td>
-          <td><Input /></td>
+          <td><Input answer="562"/></td>
           <td>1000</td>
           <td>765</td>
-          <td><Input /></td>
+          <td><Input answer="614"/></td>
         </tr>
         </tbody>
       </table>

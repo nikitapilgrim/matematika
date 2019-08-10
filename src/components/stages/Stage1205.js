@@ -16,12 +16,12 @@ export const Stage1205 = () => {
              style="margin-top: 20px;">
         <tbody>
         <tr>
-          <td className="desno">8 kg 62 dag 40 g + 1 kg 23 dag 80 g = <Input type="text"
+          <td className="desno">8 kg 62 dag 40 g + 1 kg 23 dag 80 g = <Input answer="9970" type="text"
                                                                              className="kockicaInput2 fontclass"
                                                                              maxLength="5"/></td>
         </tr>
         <tr>
-          <td className="desno">3 kg 18 dag 20 g + 5 kg 82 dag 90 g =<Input type="text"
+          <td className="desno">3 kg 18 dag 20 g + 5 kg 82 dag 90 g =<Input answer="9110" type="text"
                                                                             className="kockicaInput2 fontclass"
                                                                             maxLength="5"/></td>
         </tr>

@@ -15,21 +15,21 @@ export const Stage0601 = () => {
         <tbody>
         <tr>
           <td width="70" className="centrirano">68∙10 =</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="680"/></td>
           <td width="70" className="centrirano">7∙100 =</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="700"/></td>
         </tr>
         <tr>
           <td width="70" className="centrirano">82∙10 =</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="560"/></td>
           <td width="70" className="centrirano">9∙100 =</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="77"/></td>
         </tr>
         <tr>
           <td width="70" className="centrirano">10∙25 =</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="250"/></td>
           <td width="70" className="centrirano">100∙4 =</td>
-          <td width="70" className="lijevo"><Input /></td>
+          <td width="70" className="lijevo"><Input answer="400"/></td>
         </tr>
 
         </tbody>

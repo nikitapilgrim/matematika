@@ -13,7 +13,7 @@ export const Stage1103 = () => {
       <p>Za koliko se promijeni broj 7198 ako se cifra desetica zamijeni sa cifrom stotica?</p>
       <div className="centrirano" style="width: 280px; margin: 30px auto;">
         <div className="displayinline lijevo"><h4>Za</h4></div>
-        <div className="displayinline desno"><Input type="text" className="kockicaInput6 fontclass" maxLength="3"/></div>
+        <div className="displayinline desno"><Input answer="720" type="text" className="kockicaInput6 fontclass" maxLength="3"/></div>
       </div>
     </div>
   );

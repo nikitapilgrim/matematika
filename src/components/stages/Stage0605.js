@@ -18,10 +18,10 @@ export const Stage0605 = () => {
         <tbody>
 
         <tr>
-          <td className="lijevo"><input /> žene</td>
+          <td className="lijevo"><Input answer="384"/> žene</td>
         </tr>
         <tr>
-          <td className="lijevo"><input /> muškaraca</td>
+          <td className="lijevo"><Input answer="336"/> muškaraca</td>
         </tr>
 
         </tbody>

@@ -17,37 +17,37 @@ export const Stage1002 = () => {
         <tbody>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1160" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1170" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1180" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1190" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1200" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1210" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
         <tr>
           <td className="desno">1150 &lt;</td>
-          <td className="centrirano"><Input placeholder="n"/></td>
+          <td className="centrirano"><Input answer="1220" placeholder="n"/></td>
           <td className="lijevo">&lt; 1230</td>
         </tr>
 
