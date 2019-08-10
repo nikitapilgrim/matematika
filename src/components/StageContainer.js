@@ -72,7 +72,11 @@ export const StageContainer = ({sounds}) => {
     <Container onSubmit={e => e.preventDefault()} onKeyup={e => {
       const target = e.target;
       const form = target.closest('form');
-      const inputs = form.querySelectorAll('input');
+      const inputs = [...form.querySelectorAll('input')];
+      const check = inputs.every((input) => {
+        return input.classList.contains('valid');
+      });
+      if (check) dispatch('next');
       //console.log(inputs)
     }}>
       <SoundWrapper>
@@ -85,7 +89,13 @@ export const StageContainer = ({sounds}) => {
         <BgStage/>
       </SvgContainer>
       <Inner>
-        {Stages[stage]()}
+        {Stages.map((Stage, index) => {
+          if (index === stage) {
+            return (
+              <Stage/>
+            )
+          }
+        })}
       </Inner>
     </Container>
   );
