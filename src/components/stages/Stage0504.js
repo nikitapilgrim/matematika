@@ -10,8 +10,7 @@ export const Stage0504 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Upiši nedostajuće brojeve:</Subtitle>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4x3"
-             style="margin-top: 40px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4x3">
         <tbody>
         <tr>
           <td>a</td>

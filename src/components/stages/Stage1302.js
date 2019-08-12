@@ -12,8 +12,7 @@ export const Stage1302 = () => {
       <Subtitle>Računaj:</Subtitle>
       <p>Izračunaj koliko mililitara nedostaje do 1 litra:</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano">256 ml</td>

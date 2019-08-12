@@ -43,21 +43,33 @@ export const App = () => {
   const [introSound, setIntroSound] = useState(false);
   const [introStatus, setIntroStatus] = useState(null);
   const [showStage, setShowStage] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
 
   const handlerPageLoad = () => {
     const container = document.querySelector('#progress-container');
-    setTimeout(function() {
-      dispatch('setProgress', 100); // final
-      window.scrollTo(0, 0);
-      setTimeout(function() {
-        container.style.opacity = '0';
-        window.scrollTo(0, 0);
-        container.style.transform = 'translate(-9999px,-9999px)';
-        setTimeout(() => {
-          setPageLoad(true);
-        }, 500);
-      }, 500);
-    }, 2000);
+    dispatch('setProgress', 100); // final
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      container.style.transform = 'translate(-9999px,-9999px)';
+      setShowIntro(true);
+      setTimeout(() => {
+        setPageLoad(true);
+      }, 2000);
+    }, 1000);
+
+
+    /* setTimeout(function() {
+       dispatch('setProgress', 100); // final
+       window.scrollTo(0, 0);
+       setTimeout(function() {
+         container.style.opacity = '0';
+         window.scrollTo(0, 0);
+         container.style.transform = 'translate(-9999px,-9999px)';
+         setTimeout(() => {
+           setPageLoad(true);
+         }, 500);
+       }, 500);
+     }, 2000);*/
   };
 
   const logScrollEvent = (event) => {
@@ -67,11 +79,12 @@ export const App = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch('setProgress', 5); // initial
     setTimeout(handlerPageLoad, 3000);
-    return () => {
+    /*return () => {
       window.removeEventListener('load', handlerPageLoad);
-    };
+    };*/
   }, []);
 
 
@@ -103,7 +116,7 @@ export const App = () => {
         url={IntroSound}
         playStatus={introStatus}
       />
-      <IntroLogo show={progress === 100}/>
+      <IntroLogo show={showIntro}/>
       <StageContainer show={showStage} sounds={{intro: {state: introSound, action: setIntroSound}}}/>
       <Background blur={showStage}/>
     </Container>

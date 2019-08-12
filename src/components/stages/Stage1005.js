@@ -12,8 +12,7 @@ export const Stage1005 = () => {
       <Subtitle>Upiši odgovor:</Subtitle>
       <p>Napiši sve četverocifrene brojeve čija je cifra hiljada 5, a veći su od 5994.</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano"><Input answer="5995" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>

@@ -13,8 +13,7 @@ export const Stage1106 = () => {
       <p>Šest teka i 7 udžbenika je plaćeno 94 KM. Udžbenik je za 6 KM skuplji od teke. Kolika je cijena udžbenika, a
         kolika teke?</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">Udžbenik</td>

@@ -11,7 +11,7 @@ export const Stage0906 = () => {
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
       <p>Ako se djeljenik poveća 18 puta i djelitelj smanji 5 puta, kako se promijeni količnik?</p>
-      <div className="centrirano" style="width: 280px; margin: 30px auto;">
+      <div className="centrirano">
         <div className="displayinline lijevo"><h4>Količnik se poveća</h4></div>
         <div className="displayinline desno"><Input answer="90"/></div>
         <div className="displayinline lijevo"><h4>puta.</h4></div>

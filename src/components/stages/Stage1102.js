@@ -10,8 +10,7 @@ export const Stage1102 = () => {
     <div>
       <Title>Brojevi do 10000</Title>
       <Subtitle>Računaj:</Subtitle>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">2380 + 4850 =</td>

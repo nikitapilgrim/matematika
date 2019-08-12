@@ -49,6 +49,12 @@ const Inner = styled.div`
   padding-right: 10px;
   background-color: white;
   overflow: hidden;
+  p {
+   @media (max-width: 600px) {
+      margin: 5px 0;
+      font-size: 12px;
+    }
+  } 
 `;
 
 const SvgContainer = styled.div`

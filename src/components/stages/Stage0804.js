@@ -15,19 +15,19 @@ export const Stage0804 = () => {
         <tbody>
         <tr>
           <td className="desno">238∙2 : 7 =</td>
-          <td className="lijevo" width="60"><Input answer="68"/></td>
+          <td className="lijevo"><Input answer="68"/></td>
         </tr>
         <tr>
           <td className="desno">354 : (2∙3) =</td>
-          <td className="lijevo" width="60"><Input answer="59"/></td>
+          <td className="lijevo"><Input answer="59"/></td>
         </tr>
         <tr>
           <td className="desno">335 : 5∙9 =</td>
-          <td className="lijevo" width="60"><Input answer="603"/></td>
+          <td className="lijevo"><Input answer="603"/></td>
         </tr>
         <tr>
           <td className="desno">360 : (9∙4) =</td>
-          <td className="lijevo" width="60"><Input answer="10"/></td>
+          <td className="lijevo"><Input answer="10"/></td>
         </tr>
         </tbody>
       </table>

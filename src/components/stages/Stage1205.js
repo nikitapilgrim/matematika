@@ -12,8 +12,7 @@ export const Stage1205 = () => {
       <Subtitle>Računaj:</Subtitle>
       <p>Izračunaj dužinu u metrima:</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">8 kg 62 dag 40 g + 1 kg 23 dag 80 g = <Input answer="9970" type="text"

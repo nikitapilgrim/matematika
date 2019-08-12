@@ -11,8 +11,7 @@ export const Stage0801 = () => {
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
       <p>{`Koji su brojevi iz skupa S ={23, 35, 42, 57, 63, 48, 28} djeljivi sa 7?`}</p>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano">Broj 1</td>

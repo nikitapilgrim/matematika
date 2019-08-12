@@ -11,8 +11,7 @@ export const Stage1003 = () => {
       <Title>Brojevi do 10000</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
       <p>{`Napiši sadržaoce stotica x ako je: 2300 < x < 3100`}</p>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">2300 &lt;</td>

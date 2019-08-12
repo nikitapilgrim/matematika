@@ -12,8 +12,7 @@ export const Stage1201 = () => {
       <Subtitle>Računaj:</Subtitle>
       <p>Izračunaj dužinu u metrima:</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">4hm 5dam 8m+5hm 3dam 3m = <Input answer="991" type="text" className="kockicaInput2 fontclass"

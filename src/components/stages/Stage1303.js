@@ -11,8 +11,7 @@ export const Stage1303 = () => {
       <Title>Mjerenje veličina</Title>
       <Subtitle>Računaj:</Subtitle>
       <p>Tvornica sokova je proizvela 6kl 4hl i 2dal soka. Prodala je 4kl 7hl i 4dal soka. Koliko je soka ostalo?</p>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano"><Input answer="1" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>

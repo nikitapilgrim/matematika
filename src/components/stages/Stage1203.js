@@ -12,8 +12,7 @@ export const Stage1203 = () => {
       <Subtitle>Računaj:</Subtitle>
       <p>Izračunaj koliko milimetara nedostaje do 1m</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano">326 mm</td>
