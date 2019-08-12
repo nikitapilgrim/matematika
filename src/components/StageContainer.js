@@ -1,20 +1,37 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useEffect, useState, useRef} from 'react';
+import {CSSTransitionGroup} from 'react-transition-group';
+import styled, {css, keyframes} from 'styled-components';
 import useStoreon from 'storeon/react';
 
 import BgStage from '../assets/svg/stage.svg';
 import {SoundButton} from './SoundButton';
 import Stages from './stages';
 
+
+const show = keyframes`
+  0% {
+      transform: scale(.25);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+`;
+
 const Container = styled.form`
+  position: fixed;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 5vh;
+  top: auto;
   height: 480px;
   width: 420px;
-  font-family: 'Acme', sans-serif;;
+  font-family: 'Acme', sans-serif;
+  opacity: 0;
+  animation: ${props => props.show && show} 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
   @media (max-width: 600px) {
     height: 320px;
     width: 270px;
@@ -31,8 +48,7 @@ const Inner = styled.div`
   padding: 20px;
   padding-right: 10px;
   background-color: white;
-
-  //box-shadow: 3px 3px 20px 6px #FFF;
+  overflow: hidden;
 `;
 
 const SvgContainer = styled.div`
@@ -65,11 +81,12 @@ const ButtonTest = styled.button`
   padding: 20px;
 `;
 
-export const StageContainer = ({sounds}) => {
+export const StageContainer = ({sounds, show}) => {
   const {dispatch, stage} = useStoreon('stage');
 
+
   return (
-    <Container onSubmit={e => e.preventDefault()} onKeyup={e => {
+    <Container show={show} onSubmit={e => e.preventDefault()} onKeyUp={e => {
       const target = e.target;
       const form = target.closest('form');
       const inputs = [...form.querySelectorAll('input')];
@@ -77,7 +94,6 @@ export const StageContainer = ({sounds}) => {
         return input.classList.contains('valid');
       });
       if (check) dispatch('next');
-      //console.log(inputs)
     }}>
       <SoundWrapper>
         <SoundButton data={sounds.intro}/>
@@ -89,13 +105,18 @@ export const StageContainer = ({sounds}) => {
         <BgStage/>
       </SvgContainer>
       <Inner>
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
         {Stages.map((Stage, index) => {
           if (index === stage) {
             return (
-              <Stage/>
-            )
+                <Stage key={index}/>
+            );
           }
         })}
+        </CSSTransitionGroup>
       </Inner>
     </Container>
   );

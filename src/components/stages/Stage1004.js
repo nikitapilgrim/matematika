@@ -1,83 +1,36 @@
-import React, {useState, useImperativeHandle, useRef} from 'react';
-import {DndProvider, DragSource, DropTarget} from 'react-dnd';
-import TouchBackend from 'react-dnd-touch-backend';
-import HTML5Backend from 'react-dnd-html5-backend';
+import React, {useState, useEffect} from 'react';
+import styled from 'styled-components';
+import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+import arrayMove from 'array-move';
+import useStoreon from 'storeon/react';
 
 import {StageWrapper} from '../Layout/StageWrapper';
 import {Input} from '../Input';
 import {Title} from '../Title';
 import {Subtitle} from '../Subtitle';
 
-const Block = React.forwardRef(
-  ({text, isDragging, connectDragSource, connectDropTarget}, ref) => {
-    const elementRef = useRef(null);
-    connectDragSource(elementRef);
-    connectDropTarget(elementRef);
-    const opacity = isDragging ? 0 : 1;
-    useImperativeHandle(ref, () => ({
-      getNode: () => elementRef.current,
-    }));
-    return (
-      <div ref={elementRef} style={{opacity}}>
-        {text}
-      </div>
-    );
-  },
-);
-const BlockDrop = DropTarget(
-  'card',
-  {
-    hover(props, monitor, component) {
-      if (!component) {
-        return null;
-      }
-      const node = component.getNode();
-      if (!node) {
-        return null;
-      }
-      const dragIndex = monitor.getItem().index;
-      const hoverIndex = props.index;
-      if (dragIndex === hoverIndex) {
-        return;
-      }
-      const hoverBoundingRect = node.getBoundingClientRect();
-      const hoverMiddleY =
-        (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
-      const clientOffset = monitor.getClientOffset();
-      const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+const SortContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  .drag_drop {
+    margin-left: 5px;
+  }
+`;
 
-      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-        return;
-      }
-      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
-        return;
-      }
-      props.moveCard(dragIndex, hoverIndex);
-      
-      monitor.getItem().index = hoverIndex;
-    },
-  },
-  connect => ({
-    connectDropTarget: connect.dropTarget(),
-  }),
-)(
-  DragSource(
-    'card',
-    {
-      beginDrag: props => ({
-        id: props.id,
-        index: props.index,
-      }),
-    },
-    (connect, monitor) => ({
-      connectDragSource: connect.dragSource(),
-      isDragging: monitor.isDragging(),
-    }),
-  )(Block),
-);
+const SortableItem = SortableElement(({value}) => <div className="drag_drop">{value}</div>);
 
+const SortableList = SortableContainer(({items}) => {
+  return (
+    <SortContainer>
+      {items.map((item, index) => (
+        <SortableItem key={`item-${item.id}`} index={index} value={item.text}/>
+      ))}
+    </SortContainer>
+  );
+});
 
 const DropContainer = () => {
+  const {dispatch, stage} = useStoreon('stage');
   const [cards, setCards] = useState([
     {
       id: 1,
@@ -116,14 +69,17 @@ const DropContainer = () => {
       text: '5991',
     },
   ]);
+  const [result, setResult] = useState();
 
-  const moveCard = (dragIndex, hoverIndex) => {
-    const dragCard = cards[dragIndex];
-    setCards(
-      update(cards, {
-        $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]],
-      }),
-    );
+  useEffect(() => {
+    setResult([...cards].sort((a, b) => Number(a.text) - Number(b.text)))
+  }, []);
+  useEffect(() => {
+    if (JSON.stringify(cards) === JSON.stringify(result)) dispatch('next')
+  }, [cards]);
+
+  const onSortEnd = ({oldIndex, newIndex}) => {
+    setCards(arrayMove(cards, oldIndex, newIndex));
   };
 
   return (
@@ -131,15 +87,7 @@ const DropContainer = () => {
       <Title>Poredaj po veličini</Title>
       <Subtitle>Poredaj po veličini brojeve od manjeg ka većem:</Subtitle>
       <div>
-        {cards.map((card, i) => (
-          <BlockDrop
-            key={card.id}
-            index={i}
-            id={card.id}
-            text={card.text}
-            moveCard={moveCard}
-          />
-        ))}
+        <SortableList axis="xy" items={cards} onSortEnd={onSortEnd}/>
       </div>
     </div>
   );
@@ -148,9 +96,7 @@ const DropContainer = () => {
 
 export const Stage1004 = () => {
     return (
-      <DndProvider backend={HTML5Backend}>
-        <DropContainer/>
-      </DndProvider>
+      <DropContainer/>
     );
   }
 ;
