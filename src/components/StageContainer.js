@@ -46,6 +46,7 @@ const Inner = styled.div`
   width: 85%;
   height: 85%;
   padding: 20px;
+  padding-left: 10px;
   padding-right: 10px;
   background-color: white;
   overflow: hidden;
@@ -60,7 +61,7 @@ const Inner = styled.div`
   }
   p {
    @media (max-width: 600px) {
-      margin: 5px 0;
+      margin: 2px 0;
       font-size: 12px;
     }
   } 

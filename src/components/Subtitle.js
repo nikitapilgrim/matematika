@@ -9,7 +9,7 @@ const H2 = styled.h2`
    
     @media (max-width: 600px) {
         font-size: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
     }
 `;
 

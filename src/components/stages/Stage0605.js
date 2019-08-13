@@ -13,7 +13,7 @@ export const Stage0605 = () => {
       <p>Na jednoj pozorišnoj predstavi bilo je 720 gledalaca. Koliko je bilo muškaraca, a koliko žena ako se zna da na
         svakih 7 muškaraca dolazi 8 žena.</p>
 
-      <table width="100:" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka1">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka1">
         <tbody>
 
         <tr>

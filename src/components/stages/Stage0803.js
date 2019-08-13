@@ -17,33 +17,28 @@ export const Stage0803 = () => {
           <td><Input answer="12"/></td>
           <td className="desno">54:3=</td>
           <td><Input answer="18"/></td>
+        </tr>
+        <tr>
           <td className="desno">135:3=</td>
           <td><Input answer="45"/></td>
+          <td className="desno">185:5=</td>
+          <td><Input answer="37"/></td>
         </tr>
         <tr>
-
-        </tr>
-        <tr>
-          <td className="desno">(24+72):8=</td>
-          <td><Input answer="12"/></td>
           <td className="desno">64:4=</td>
           <td><Input answer="16"/></td>
           <td className="desno">264:4=</td>
           <td><Input answer="66"/></td>
         </tr>
         <tr>
-
-        </tr>
-        <tr>
           <td className="desno">(54+30):6=</td>
           <td><Input answer="13"/></td>
           <td className="desno">95:5=</td>
           <td><Input answer="19"/></td>
-          <td className="desno">185:5=</td>
-          <td><Input answer="37"/></td>
         </tr>
         <tr>
-
+          <td className="desno">(24+72):8=</td>
+          <td><Input answer="12"/></td>
         </tr>
         </tbody>
       </table>
