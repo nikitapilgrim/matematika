@@ -11,7 +11,10 @@ let stage = store => {
   store.on('final', ({final}, state) => {
     return ({final: state});
   });
-  store.on('next', ({stage}) => {
+  store.on('next', ({stage}, number) => {
+    if (number) {
+      return ({stage: number})
+    }
     if (Stages.length <= stage) {
       store.dispatch('final', true);
       return ({stage: stage});

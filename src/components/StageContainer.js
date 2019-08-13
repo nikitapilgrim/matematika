@@ -60,10 +60,11 @@ const Inner = styled.div`
     }
   }
   p {
-   @media (max-width: 600px) {
-      margin: 2px 0;
-      font-size: 12px;
-    }
+     font-size: 18px;
+     @media (max-width: 600px) {
+        margin: 2px 0;
+        font-size: 12px;
+      }
   } 
 `;
 
@@ -93,7 +94,7 @@ const SoundWrapper = styled.div`
   
 `;
 
-const ButtonTest = styled.button`
+const ButtonTest = styled.input`
   padding: 20px;
 `;
 
@@ -113,9 +114,9 @@ export const StageContainer = ({sounds, show}) => {
     }}>
       <SoundWrapper>
         <SoundButton data={sounds.intro}/>
-        <ButtonTest onClick={() => {
-          dispatch('next');
-        }}>TEST</ButtonTest>
+        <ButtonTest onChange={(e) => {
+          dispatch('next', Number(e.target.value));
+        }}/>
       </SoundWrapper>
       <SvgContainer>
         <BgStage/>
@@ -125,13 +126,13 @@ export const StageContainer = ({sounds, show}) => {
           transitionName="example"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
-        {Stages.map((Stage, index) => {
-          if (index === stage) {
-            return (
+          {Stages.map((Stage, index) => {
+            if (index === stage) {
+              return (
                 <Stage key={index}/>
-            );
-          }
-        })}
+              );
+            }
+          })}
         </CSSTransitionGroup>
       </Inner>
     </Container>
