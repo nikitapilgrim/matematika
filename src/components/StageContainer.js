@@ -68,6 +68,16 @@ const Inner = styled.div`
   } 
 `;
 
+const ButtonNext = styled.button`
+  padding: 20px;
+`
+
+const StageInfo = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+`
+
 const SvgContainer = styled.div`
   position: absolute; 
   top: -30px;
@@ -117,6 +127,12 @@ export const StageContainer = ({sounds, show}) => {
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
         }}/>
+        <ButtonNext onClick={e => {
+          dispatch('next');
+        }}>
+          next
+        </ButtonNext>
+        <StageInfo>{stage}</StageInfo>
       </SoundWrapper>
       <SvgContainer>
         <BgStage/>
