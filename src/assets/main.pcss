@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "modern-normalize";
 
 @custom-media --screen-xs (min-width: 500px);
@@ -15,34 +16,22 @@ html, body {
     height: fit-content;
     -webkit-font-smoothing: subpixel-antialiased;
     background-color: #F0F0F0;
+    overflow: hidden;
 }
 
 body {
-    overflow: hidden;
-    position: fixed;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    background-color: aquamarine;
+
 }
 
 #root {
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    height: 100%;
-    height: fit-content;
+    overflow: hidden;
 }
 
-
-@charset "UTF-8";
-/* CSS Document */
-html, body {
-    background-color: aquamarine;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
 
 h1 {
     font-family: 'Acme', sans-serif;
@@ -176,7 +165,6 @@ h4 {
 
 .tabela4redka {
     border: none;
-    height: 35px;
     padding: 0;
     text-align: center;
     margin: 0 auto;
@@ -184,7 +172,6 @@ h4 {
 
 .tabela4redka1 {
     border: none;
-    height: 35px;
     padding: 0;
     text-align: center;
     margin: 0 auto;
@@ -198,7 +185,6 @@ h4 {
 }
 
 .tabela4x3 td {
-    width: 80px;
     text-align: center;
 }
 
@@ -218,14 +204,12 @@ h4 {
 };
 
 .tabela4redka td {
-    width: 70px;
-    height: 45px;
+
     background-color: none;
 }
 
 .tabela4redka1 td {
-    width: 70px;
-    height: 20px;
+
     background-color: none;
 }
 
@@ -288,6 +272,14 @@ h4 {
     margin: 2px 0;
     display: inline-block;
     border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .drag_drop {
+        min-width: 50px;
+        font-size: 16px;
+        padding: 5px 10px;
+    }
 }
 
 .input {

@@ -11,8 +11,9 @@ const InputStyled = styled.input`
   background-color: beige;
   outline: none;
   @media (max-width: 600px) {
-        height: 30px;
-        width: 60px;
+        height: 25px;
+        width: 40px;
+        
     }
 `;
 

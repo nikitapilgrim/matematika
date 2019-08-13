@@ -7,8 +7,22 @@ const slide = (y) => keyframes`
       transform: translateY(-${y}px);
   }
   100% {
-      transform: translateY(0px);
+      transform: translateY(-150px);
   }
+`;
+
+const hide = props => keyframes`
+  0% {
+      opacity: 1;
+      transform: translateY(-150px);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-30vh);
+  }
+`;
+const animationHide = props => css`
+      ${props.hide && hide()} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 `;
 
 const animation = props => css`
@@ -20,7 +34,7 @@ const TitleContainer = styled.div`
   width: 75vw;
   z-index: 1;
   transform: translateY(${props => props.offsetHeight}px);
-  animation: ${animation}
+  animation: ${props => props.hide ? animationHide : animation}
 `;
 
 export const IntroLogo = ({show, hide}) => {
@@ -32,7 +46,7 @@ export const IntroLogo = ({show, hide}) => {
   });
 
   return (
-    <TitleContainer offsetHeight={offset} ref={ref} show={show}>
+    <TitleContainer offsetHeight={offset} ref={ref} hide={hide} show={show}>
       <Title/>
     </TitleContainer>
   );

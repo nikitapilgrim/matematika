@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Link, Route} from 'wouter';
-import SmoothScroll from 'smooth-scroll';
+import easyScroll from 'easy-scroll';
+import Confetti from 'react-confetti';
+
 import StoreContext from 'storeon/react/context';
 import useStoreon from 'storeon/react';
+import useWindowSize from 'react-use/lib/useWindowSize';
 //#if _DEBUG
 import HotManager from './HotManager';
 //#endif
@@ -11,7 +14,6 @@ import {store} from './store/store';
 import Sound from 'react-sound';
 import styled from 'styled-components';
 
-import FinalPage from './pages/final';
 import {Background} from './components/Layout/Background';
 import {IntroLogo} from './components/IntroLogo';
 import {StageContainer} from './components/StageContainer';
@@ -27,7 +29,20 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+  -webkit-overflow-scrolling: touch;
+  ::-webkit-scrollbar { 
+    display: none; 
+  }
+`;
+
+const ConfettiWrapper = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 `;
 
 
@@ -37,54 +52,37 @@ const SoundStatus = {
 };
 
 export const App = () => {
-  const Scroll = new SmoothScroll();
-  const {dispatch, progress} = useStoreon('progress');
+  const {dispatch, progress, stage, final} = useStoreon('progress', 'stage', 'final');
   const [pageLoad, setPageLoad] = useState(false);
   const [introSound, setIntroSound] = useState(false);
   const [introStatus, setIntroStatus] = useState(null);
   const [showStage, setShowStage] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
+  const {width, height} = useWindowSize();
+  const scrollRef = useRef(null);
+
+  const handlerScrollEnd = (event) => {
+    setTimeout(() => {
+      setShowStage(true);
+    }, 1000);
+  };
 
   const handlerPageLoad = () => {
     const container = document.querySelector('#progress-container');
     dispatch('setProgress', 100); // final
-    window.scrollTo(0, 0);
     setTimeout(() => {
-      container.style.transform = 'translate(-9999px,-9999px)';
+      container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
       setShowIntro(true);
       setTimeout(() => {
         setPageLoad(true);
       }, 2000);
     }, 1000);
 
-
-    /* setTimeout(function() {
-       dispatch('setProgress', 100); // final
-       window.scrollTo(0, 0);
-       setTimeout(function() {
-         container.style.opacity = '0';
-         window.scrollTo(0, 0);
-         container.style.transform = 'translate(-9999px,-9999px)';
-         setTimeout(() => {
-           setPageLoad(true);
-         }, 500);
-       }, 500);
-     }, 2000);*/
-  };
-
-  const logScrollEvent = (event) => {
-    setTimeout(() => {
-      setShowStage(true);
-    }, 1000);
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     dispatch('setProgress', 5); // initial
-    setTimeout(handlerPageLoad, 3000);
-    /*return () => {
-      window.removeEventListener('load', handlerPageLoad);
-    };*/
+    setTimeout(handlerPageLoad, 3000); // time to load resources
   }, []);
 
 
@@ -94,29 +92,33 @@ export const App = () => {
 
   useEffect(() => {
     if (pageLoad) {
-      document.addEventListener('scrollCancel', logScrollEvent, false);
-      const body = document.querySelector('body');
-
       setTimeout(() => {
-        Scroll.animateScroll(body.scrollHeight);
+        easyScroll({
+          'scrollableDomEle': scrollRef.current,
+          'direction': 'bottom',
+          'duration': 1000,
+          'easingPreset': 'easeInQuad',
+          'scrollAmount': scrollRef.current.scrollHeight,
+          'onAnimationCompleteCallback': handlerScrollEnd,
+        });
       }, 1000);
-      return () => {
-        document.removeEventListener('scrollCancel', logScrollEvent);
-      };
+
     }
   }, [pageLoad]);
 
-  /*const handlerOnLoad = (e) => {
-    introSound ? setIntroStatus(SoundStatus.PLAYING) : setIntroStatus(SoundStatus.PAUSED);
-  };*/
-
   return (
-    <Container>
+    <Container ref={scrollRef}>
       <Sound
         url={IntroSound}
         playStatus={introStatus}
       />
-      <IntroLogo show={showIntro}/>
+      {final && <ConfettiWrapper>
+        <Confetti
+          width={width}
+          height={height}
+        />
+      </ConfettiWrapper>}
+      <IntroLogo hide={showStage} show={showIntro}/>
       <StageContainer show={showStage} sounds={{intro: {state: introSound, action: setIntroSound}}}/>
       <Background blur={showStage}/>
     </Container>
@@ -127,7 +129,6 @@ const WithProviders = () => {
   return (
     <StoreContext.Provider value={store}>
       <Route path="/" component={App}/>
-      <Route path="/final" component={FinalPage}/>
     </StoreContext.Provider>
   );
 };
