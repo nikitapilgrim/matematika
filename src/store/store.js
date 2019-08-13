@@ -12,7 +12,7 @@ let stage = store => {
     return ({final: state});
   });
   store.on('next', ({stage}, number) => {
-    if (number) {
+    if (number === 0 || number) {
       return ({stage: number})
     }
     if (Stages.length <= stage) {
