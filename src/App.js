@@ -70,19 +70,24 @@ export const App = () => {
   const handlerPageLoad = () => {
     const container = document.querySelector('#progress-container');
     dispatch('setProgress', 100); // final
-    setTimeout(() => {
-      container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
-      setShowIntro(true);
-      setTimeout(() => {
-        setPageLoad(true);
-      }, 2000);
-    }, 1000);
-
+    container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
+    /* dispatch('setProgress', 100); // final
+     setTimeout(() => {
+       container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
+       setShowIntro(true);
+       setTimeout(() => {
+         setPageLoad(true);
+       }, 2000);
+     }, 1000);
+ */
   };
 
   useEffect(() => {
     dispatch('setProgress', 5); // initial
+    handlerPageLoad()
+/*
     setTimeout(handlerPageLoad, 3000); // time to load resources
+*/
   }, []);
 
 
@@ -118,9 +123,9 @@ export const App = () => {
           height={height}
         />
       </ConfettiWrapper>}
-      <IntroLogo hide={showStage} show={showIntro}/>
-      <StageContainer show={showStage} sounds={{intro: {state: introSound, action: setIntroSound}}}/>
-      <Background blur={showStage}/>
+      <IntroLogo hide={/*showStage*/false} show={{/*showIntro*/}}/>
+      <StageContainer show={/*showStage*/true} sounds={{intro: {state: introSound, action: setIntroSound}}}/>
+      <Background blur={/*showStage*/ true}/>
     </Container>
   );
 };
