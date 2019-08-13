@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import cx from 'classnames';
 
 const InputStyled = styled.input`
-  height: 35px;
-  width: 80px;
+  height: 30px;
+  width: 70px;
   padding: 0;
   margin: 0;
   text-align: center;

@@ -49,6 +49,15 @@ const Inner = styled.div`
   padding-right: 10px;
   background-color: white;
   overflow: hidden;
+  > span {
+    display: block;
+    height: 100%;
+    > div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
   p {
    @media (max-width: 600px) {
       margin: 5px 0;
