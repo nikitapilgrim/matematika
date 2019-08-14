@@ -8,7 +8,7 @@ const InputStyled = styled.input`
   padding: 0;
   margin: 0;
   text-align: center;
-  background-color: beige;
+  background-color: beige;  
   outline: none;
   @media (max-width: 600px) {
         height: 25px;

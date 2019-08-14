@@ -5,6 +5,7 @@ const H1 = styled.h1`
     font-size: 36px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    text-align: center;
     @media (max-width: 600px) {
         font-size: 20px;
     }

@@ -14,7 +14,7 @@ export const Stage0102 = () => {
         <tbody>
         <tr>
           <td className="centrirano">38+x=96</td>
-          <td className="backgroundbeige">x=<Input answer="58"/></td>
+          <td className="backgroundbeige">x=<Input className="backgroundwhite" answer="58"/></td>
         </tr>
         <tr>
           <td className="centrirano">x–27=68</td>

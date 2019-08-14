@@ -10,7 +10,7 @@ export const Stage0104 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
-      <p>U teretni voz je utovareno 9 vagona povrća. U svakom vagonu je 7 sanduka povrća. Na prvoj stanici je iz tri
+      <p className="p_block2">U teretni voz je utovareno 9 vagona povrća. U svakom vagonu je 7 sanduka povrća. Na prvoj stanici je iz tri
         vagona istovareno po 4 sanduka povrća. Na sljedećoj stanici je istovareno iz 5 vagona po 6 sanduka povrća, a
         ostatak povrća je istovaren na trećoj stanici.</p>
       <p>Koliko je sanduka istovareno na trećoj stanici?</p>

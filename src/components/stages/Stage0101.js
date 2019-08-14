@@ -10,15 +10,15 @@ export const Stage0101 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Računaj (upiši rješenje):</Subtitle>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela2x5">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela2x5 left01">
         <tbody>
         <tr>
           <td className="desno">73+(42–18)=</td>
-          <td className="lijevo"><Input answer="97"/></td>
+          <td className="lijevo"><Input className="backgroundbeige" answer="97"/></td>
         </tr>
         <tr>
           <td className="desno">94-(26+17)=</td>
-          <td className="lijevo"><Input answer="53"/></td>
+          <td className="lijevo"><Input answer="51"/></td>
         </tr>
         <tr>
           <td className="desno">100–34–26=</td>

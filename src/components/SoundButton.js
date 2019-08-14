@@ -1,3 +1,5 @@
+//TODO Sound does not loop. Just plays once.
+
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import IconOff from '../assets/svg/icon-speaker-off.svg';
