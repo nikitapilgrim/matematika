@@ -16,11 +16,11 @@ const InputStyled = styled.input`
     }
 `;
 
-export const Input = ({answer}) => {
+export const Input = ({answer, className}) => {
   const [valid, setValid] = useState(false);
   const [unValid, setUnvalid] = useState(false);
 
-  const classNames = cx('input', {'valid': valid}, {'unvalid': unValid});
+  const classNames = cx('input', className, {'valid': valid}, {'unvalid': unValid});
 
   const handlerKeyUp = e => {
     if (e.target.value === answer) {
