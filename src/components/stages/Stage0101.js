@@ -10,7 +10,7 @@ export const Stage0101 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Računaj (upiši rješenje):</Subtitle>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela2x5 left01">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="6" align="center" className="fontclass tabela2x5 left01">
         <tbody>
         <tr>
           <td className="desno">73+(42–18)=</td>
