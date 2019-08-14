@@ -11,19 +11,19 @@ export const Stage0402 = () => {
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Računaj (upiši rješenje)</Subtitle>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela2x5">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="3" align="center" className="col2_table col2_margin_2">
         <tbody>
         <tr>
-          <td className="centrirano">360 – 180 =</td>
-          <td className="lijevo"><Input answer="180"/></td>
+          <td className="centrirano col2_table_cell fontsize20">360 – 180 =</td>
+          <td className="lijevo col2_table_cell"><Input answer="180"/></td>
         </tr>
         <tr>
-          <td className="centrirano">960 – 380 =</td>
-          <td className="lijevo"><Input answer="580"/></td>
+          <td className="centrirano col2_table_cell fontsize20">960 – 380 =</td>
+          <td className="lijevo col2_table_cell"><Input answer="580"/></td>
         </tr>
         <tr>
-          <td className="centrirano">640 + 290 =</td>
-          <td className="lijevo"><Input answer="930"/></td>
+          <td className="centrirano col2_table_cell fontsize20">640 + 290 =</td>
+          <td className="lijevo col2_table_cell"><Input answer="930"/></td>
         </tr>
 
         </tbody>

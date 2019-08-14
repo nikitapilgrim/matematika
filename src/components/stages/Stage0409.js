@@ -10,10 +10,12 @@ export const Stage0409 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Odgovori:</Subtitle>
-      <p>Zbir dva uzastopna prirodna broja je 651. Odredi te brojeve.</p>
+      <p className="p_block3">Zbir dva uzastopna prirodna broja je 651.</p>
+      <p className="p_block3 marginbottom20px">Odredi te brojeve.</p>
       <div className="centrirano fullwidth">
-        <div className="width90 displayinline desno"><Input answer="325"/></div>
-        <div className="width90 displayinline desno"><Input answer="326"/></div>
+
+        <div className=" displayinline desno margin5"><Input answer="325"/></div>
+        <div className=" displayinline desno margin5"><Input answer="326"/></div>
       </div>
     </div>
   );

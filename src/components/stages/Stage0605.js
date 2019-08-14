@@ -10,17 +10,17 @@ export const Stage0605 = () => {
     <div>
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Odgovori</Subtitle>
-      <p>Na jednoj pozorišnoj predstavi bilo je 720 gledalaca. Koliko je bilo muškaraca, a koliko žena ako se zna da na
+      <p className="p_block2">Na jednoj pozorišnoj predstavi bilo je 720 gledalaca. Koliko je bilo muškaraca, a koliko žena ako se zna da na
         svakih 7 muškaraca dolazi 8 žena.</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka1">
+      <table border="0" cellSpacing="2" cellPadding="0" align="center" className="marginleft30px">
         <tbody>
 
         <tr>
-          <td className="lijevo"><Input answer="384"/> žene</td>
+          <td><Input answer="384"/><span className="p_block4">žene</span></td>
         </tr>
         <tr>
-          <td className="lijevo"><Input answer="336"/> muškaraca</td>
+          <td><Input answer="336"/><span className="p_block4">muškaraca</span></td>
         </tr>
 
         </tbody>

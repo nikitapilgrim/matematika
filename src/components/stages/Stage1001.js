@@ -10,7 +10,7 @@ export const Stage1001 = () => {
     <div>
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
-      <p>Napiši sve dekadne jedinice koje ste učili.</p>
+      <p className="p_block6 marginbottom20px">Napiši sve dekadne jedinice koje ste učili.</p>
       <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>

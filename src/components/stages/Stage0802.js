@@ -11,37 +11,37 @@ export const Stage0802 = () => {
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Popuni kvadratiće odgovarajućim brojevima:</Subtitle>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="70%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
-          <td>21 =</td>
-          <td> 6</td>
-          <td>∙ 3 +</td>
-          <td><Input answer="3"/></td>
+          <td className="nowrap">21 =</td>
+          <td className="nowrap"> 6</td>
+          <td className="nowrap">∙ 3 +</td>
+          <td className="nowrap"><Input answer="3"/></td>
         </tr>
         <tr>
-          <td>52 =</td>
-          <td><Input answer="8"/></td>
-          <td>∙ 6 +</td>
-          <td><Input answer="4"/></td>
+          <td className="nowrap">52 =</td>
+          <td className="nowrap"><Input answer="8"/></td>
+          <td className="nowrap">∙ 6 +</td>
+          <td className="nowrap"><Input answer="4"/></td>
         </tr>
         <tr>
-          <td>44 =</td>
-          <td><Input answer="5"/></td>
-          <td>∙ 8 +</td>
-          <td><Input answer="4"/></td>
+          <td className="nowrap">44 =</td>
+          <td className="nowrap"><Input answer="5"/></td>
+          <td className="nowrap">∙ 8 +</td>
+          <td className="nowrap"><Input answer="4"/></td>
         </tr>
         <tr>
-          <td>68 =</td>
-          <td><Input answer="7"/></td>
-          <td>∙ 9 +</td>
-          <td><Input answer="5"/></td>
+          <td className="nowrap">68 =</td>
+          <td className="nowrap"><Input answer="7"/></td>
+          <td className="nowrap">∙ 9 +</td>
+          <td className="nowrap"><Input answer="5"/></td>
         </tr>
         <tr>
-          <td>38 =</td>
-          <td><Input answer="9"/></td>
-          <td>∙ 4 +</td>
-          <td><Input answer="2"/></td>
+          <td className="nowrap">38 =</td>
+          <td className="nowrap"><Input answer="9"/></td>
+          <td className="nowrap">∙ 4 +</td>
+          <td className="nowrap"><Input answer="2"/></td>
         </tr>
         </tbody>
       </table>

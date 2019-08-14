@@ -9,19 +9,20 @@ export const Stage0304 = () => {
   return (
     <div>
       <Title>Ponavljanje gradiva</Title>
-      <Subtitle>Napiši sve trocifrene brojeve ciframa: 5, 3, 1</Subtitle>
+      <Subtitle>Napiši sve trocifrene brojeve ciframa:</Subtitle>
+      <Subtitle>5, 3, 1</Subtitle>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela3x5">
+      <table border="0" cellSpacing="0" cellPadding="3" align="center" className="col3_table">
         <tbody>
         <tr>
-          <td><Input answer="531"/></td>
-          <td><Input answer="513"/></td>
-          <td><Input answer="351"/></td>
+          <td className="col3_table_cell"><Input answer="531"/></td>
+          <td className="col3_table_cell"><Input answer="513"/></td>
+          <td className="col3_table_cell"><Input answer="351"/></td>
         </tr>
         <tr>
-          <td><Input answer="315"/></td>
-          <td><Input answer="153"/></td>
-          <td><Input answer="135"/></td>
+          <td className="col3_table_cell"><Input answer="315"/></td>
+          <td className="col3_table_cell"><Input answer="153"/></td>
+          <td className="col3_table_cell"><Input answer="135"/></td>
         </tr>
 
         </tbody>

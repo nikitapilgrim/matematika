@@ -9,10 +9,10 @@ export const Stage1002 = () => {
   return (
     <div>
       <Title>Brojevi do 10000</Title>
-      <Subtitle>Upiši odgovor:</Subtitle>
-      <p>{`Napiši sadržaoce desetica n ako je 1150 < n
+      {/*<Subtitle>Upiši odgovor:</Subtitle>*/}
+      <p className="p_block7">{`Napiši sadržaoce desetica n ako je 1150 < n
       < 1230`}</p>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="70%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">1150 &lt;</td>

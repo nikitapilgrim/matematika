@@ -10,7 +10,9 @@ export const Stage0801 = () => {
     <div>
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
-      <p>{`Koji su brojevi iz skupa S ={23, 35, 42, 57, 63, 48, 28} djeljivi sa 7?`}</p>
+      <p className="p_block5 ">{`Koji su brojevi iz skupa`}</p>
+      <p className="p_block5 "><strong>{`S={23, 35, 42, 57, 63, 48, 28}`}</strong></p>
+      <p className="p_block5 marginbottom20px">{`djeljivi sa 7?`}</p>
       <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>

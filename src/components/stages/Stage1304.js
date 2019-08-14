@@ -10,7 +10,7 @@ export const Stage1304 = () => {
     <div>
       <Title>Mjerenje veličina</Title>
       <Subtitle>Računaj:</Subtitle>
-      <p>Tvornica sokova je proizvela 6kl 4hl i 2dal soka. Prodala je 4kl 7hl i 4dal soka. Koliko je soka ostalo?</p>
+      <p className="p_block8 marginbottom20px">Tvornica sokova je proizvela 6kl 4hl i 2dal soka. Prodala je 4kl 7hl i 4dal soka. Koliko je soka ostalo?</p>
       <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka1">
         <tbody>
         <tr>

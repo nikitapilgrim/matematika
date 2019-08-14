@@ -10,10 +10,9 @@ export const Stage1105 = () => {
     <div>
       <Title>Brojevi do 10000</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
-      <p>Za koliko se promijeni broj 2345 ako se cifra hiljada zamijeni sa cifrom stotica?</p>
-      <p>Napiši sve četverocifrene brojeve veće od 9994.</p>
+      <p className="p_block8 marginbottom20px">Za koliko se promijeni broj 2345 ako se cifra hiljada zamijeni sa cifrom stotica? Napiši sve četverocifrene brojeve veće od 9994.</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="70%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano"><Input answer="9995" type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>

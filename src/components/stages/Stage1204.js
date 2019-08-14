@@ -10,9 +10,10 @@ export const Stage1204 = () => {
     <div>
       <Title>Mjerenje veličina</Title>
       <Subtitle>Računaj:</Subtitle>
-      <p>Izračunaj koliko grama nedostaje do 1 kg</p>
+      <p className="p_block8 ">Izračunaj koliko grama nedostaje</p>
+      <p className="p_block8 marginbottom20px">do 1 kg</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="80%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano">456 g</td>

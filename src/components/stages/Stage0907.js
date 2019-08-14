@@ -10,7 +10,7 @@ export const Stage0907 = () => {
     <div>
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="80%" border="0" cellSpacing="2" cellPadding="3" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">187 + 2∙187 =</td>

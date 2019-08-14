@@ -16,7 +16,7 @@ export const Stage0104 = () => {
       <p className="p_block2">Koliko je sanduka istovareno na trećoj stanici?</p>
       <div className="centrirano fullwidth">
         <div className="width90 displayinline desno"><Input answer="21"/></div>
-        <div className="width90 displayinline lijevo"><h4>dag</h4></div>
+        <div className="width90 displayinline lijevo"><h4 className="margin5">dag</h4></div>
       </div>
     </div>
   );

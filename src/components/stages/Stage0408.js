@@ -10,9 +10,9 @@ export const Stage0408 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Odgovori:</Subtitle>
-      <p>Koji najveći prirodan broj možeš dodati broju 136 pa da dobiješ rezultat manji od broja 250?</p>
+      <p className="p_block2">Koji najveći prirodan broj možeš dodati broju 136 pa da dobiješ rezultat manji od broja 250?</p>
       <div className="centrirano fullwidth">
-        <div className="width90 displayinline desno"><Input answer="113"/></div>
+        <div className=" displayinline desno"><Input answer="113"/></div>
       </div>
     </div>
   );

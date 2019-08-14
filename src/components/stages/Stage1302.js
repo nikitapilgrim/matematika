@@ -10,9 +10,9 @@ export const Stage1302 = () => {
     <div>
       <Title>Mjerenje veličina</Title>
       <Subtitle>Računaj:</Subtitle>
-      <p>Izračunaj koliko mililitara nedostaje do 1 litra:</p>
+      <p className="p_block8 marginbottom20px">Izračunaj koliko mililitara nedostaje do 1 litra:</p>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="70%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano">256 ml</td>

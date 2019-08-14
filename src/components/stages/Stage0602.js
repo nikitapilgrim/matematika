@@ -11,7 +11,7 @@ export const Stage0602 = () => {
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Računaj:</Subtitle>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="3" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="desno">4∙2∙7∙10 =</td>

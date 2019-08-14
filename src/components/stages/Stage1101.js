@@ -10,8 +10,8 @@ export const Stage1101 = () => {
     <div>
       <Title>Brojevi do 10000</Title>
       <Subtitle>Upiši odgovor:</Subtitle>
-      <p>Napiši najveći petocifreni broj ciframa 1, 8, 3, 6, 7</p>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <p className="p_block8 marginbottom20px">Napiši najveći petocifreni broj ciframa 1, 8, 3, 6, 7</p>
+      <table width="70%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>
         <tr>
           <td className="centrirano"><Input type="text" className="kockicaInput2 fontclass" maxLength="5"/></td>

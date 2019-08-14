@@ -10,9 +10,9 @@ export const Stage0502 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Računaj:</Subtitle>
-      <p>Od zbira brojeva 427 i 256 oduzmi njihovu razliku.</p>
+      <p className="p_block2">Od zbira brojeva 427 i 256 oduzmi njihovu razliku.</p>
       <div className="centrirano fullwidth">
-        <div className="width90 displayinline desno"><Input answer="512"/></div>
+        <div className=" displayinline desno"><Input answer="512"/></div>
       </div>
     </div>
   );

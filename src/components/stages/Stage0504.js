@@ -27,11 +27,11 @@ export const Stage0504 = () => {
           <td>328</td>
         </tr>
         <tr>
-          <td>a+b</td>
-          <td><Input answer="562"/></td>
-          <td>1000</td>
-          <td>765</td>
-          <td><Input answer="614"/></td>
+          <td className="topborder">a+b</td>
+          <td className="topborder"><Input answer="562"/></td>
+          <td className="topborder">1000</td>
+          <td className="topborder">765</td>
+          <td className="topborder"><Input answer="614"/></td>
         </tr>
         </tbody>
       </table>

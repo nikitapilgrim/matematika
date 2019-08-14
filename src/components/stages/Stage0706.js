@@ -10,7 +10,7 @@ export const Stage0706 = () => {
     <div>
       <Title>Množenje i dijeljenje</Title>
       <Subtitle>Računaj brzo i tačno:</Subtitle>
-      <p>Zbir tri broja je 440. Prvi od njih je dva puta manji od drugog, a 7 puta veći od trećeg. Koji su to
+      <p className="p_block2 marginbottom20px">Zbir tri broja je 440. Prvi od njih je dva puta manji od drugog, a 7 puta veći od trećeg. Koji su to
         brojevi?</p>
       <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
         <tbody>

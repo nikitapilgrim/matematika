@@ -10,16 +10,16 @@ export const Stage1303 = () => {
     <div>
       <Title>Mjerenje veličina</Title>
       <Subtitle>Računaj:</Subtitle>
-      <p>Tvornica sokova je proizvela 6kl 4hl i 2dal soka. Prodala je 4kl 7hl i 4dal soka. Koliko je soka ostalo?</p>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4redka">
+      <p className="p_block8 marginbottom20px">Tvornica sokova je proizvela 6kl 4hl i 2dal soka. Prodala je 4kl 7hl i 4dal soka. Koliko je soka ostalo?</p>
+      <table width="90%" border="0" cellSpacing="2" cellPadding="0" align="center" className="">
         <tbody>
         <tr>
-          <td className="centrirano"><Input answer="1" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
-          <td className="desno">kl</td>
-          <td className="centrirano"><Input answer="6" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
-          <td className="desno">hl</td>
-          <td className="centrirano"><Input answer="8" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
-          <td className="desno">dal</td>
+          <td className="desno"><Input answer="1" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
+          <td className="lijevo p_block8">kl</td>
+          <td className="desno"><Input answer="6" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
+          <td className="lijevo p_block8">hl</td>
+          <td className="desno"><Input answer="8" type="text" className="kockicaInput6 fontclass" maxLength="5"/></td>
+          <td className="lijevo p_block8">dal</td>
         </tr>
 
         </tbody>

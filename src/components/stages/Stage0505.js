@@ -11,10 +11,10 @@ export const Stage0505 = () => {
       <Title>Sabiranje i oduzimanje</Title>
       <Subtitle>Odgovori:</Subtitle>
 
-      <p>Imaš na štednji 957 KM. Potrošiš 250 KM, a uskoro položiš 197 KM. Koliko poslije toga imaš na štednji?</p>
+      <p className="p_block2">Imaš na štednji 957 KM. Potrošiš 250 KM, a uskoro položiš 197 KM. Koliko poslije toga imaš na štednji?</p>
       <div className="centrirano fullwidth">
         <div className="width90 displayinline desno"><Input answer="904"/></div>
-        <div className="width90 displayinline lijevo"><h4>KM</h4></div>
+        <div className="width90 displayinline lijevo"><h4><span className="marginright10px">KM</span></h4></div>
       </div>
 
     </div>
