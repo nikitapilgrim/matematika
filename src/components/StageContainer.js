@@ -102,8 +102,7 @@ const ButtonTest = styled.input`
 `;
 
 export const StageContainer = ({sounds, show}) => {
-  const {dispatch, stage} = useStoreon('stage');
-
+  const {dispatch, stage, audio} = useStoreon('stage', 'audio');
 
   return (
     <Container show={show} onSubmit={e => e.preventDefault()} onKeyUp={e => {
@@ -116,7 +115,9 @@ export const StageContainer = ({sounds, show}) => {
       if (check) dispatch('next');
     }}>
       <SoundWrapper>
-        <SoundButton data={sounds.intro}/>
+        <SoundButton onClick={() => {
+          audio.intro ? dispatch('intro/off') : dispatch('intro/on')
+        }} state={audio.intro}/>
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
         }}/>

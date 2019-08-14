@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {Link, Route} from 'wouter';
 import easyScroll from 'easy-scroll';
 import Confetti from 'react-confetti';
+import useAudio from 'react-use/lib/useAudio';
 
 import StoreContext from 'storeon/react/context';
 import useStoreon from 'storeon/react';
@@ -11,15 +12,11 @@ import HotManager from './HotManager';
 //#endif
 import {store} from './store/store';
 
-import Sound from 'react-sound';
 import styled from 'styled-components';
 
 import {Background} from './components/Layout/Background';
 import {IntroLogo} from './components/IntroLogo';
 import {StageContainer} from './components/StageContainer';
-
-// SOUNDS
-import IntroSound from './assets/sounds/01.mp3';
 
 const Container = styled.div`
   display: flex;
@@ -46,13 +43,18 @@ const ConfettiWrapper = styled.div`
 `;
 
 
-const SoundStatus = {
-  PAUSED: Sound.status.PAUSED,
-  PLAYING: Sound.status.PLAYING,
+// SOUNDS
+const SoundManager = {
+  intro: {
+    mp3: require('./assets/sounds/01.mp3'),
+    acc: require('./assets/sounds/01.aac'),
+    m4r: require('./assets/sounds/01.m4r'),
+    ogg: require('./assets/sounds/01.oggvorbis.ogg'),
+  }
 };
 
 export const App = () => {
-  const {dispatch, progress, stage, final} = useStoreon('progress', 'stage', 'final');
+  const {dispatch, progress, stage, final, audio} = useStoreon('progress', 'stage', 'final', 'audio');
   const [pageLoad, setPageLoad] = useState(false);
   const [introSound, setIntroSound] = useState(false);
   const [introStatus, setIntroStatus] = useState(null);
@@ -60,6 +62,20 @@ export const App = () => {
   const [showIntro, setShowIntro] = useState(false);
   const {width, height} = useWindowSize();
   const scrollRef = useRef(null);
+  const [music, state, controls, ref] = useAudio(<audio controls loop ref={ref}>
+    <source src={SoundManager.intro.mp3} type="audio/mpeg"/>
+    <source src={SoundManager.intro.ogg} type="audio/ogg"/>
+    <source src={SoundManager.intro.acc} type="audio/acc"/>
+  </audio>);
+
+  useEffect(() => {
+    if (audio.intro) {
+      controls.play()
+    }
+    if (audio.intro === false) {
+      controls.pause()
+    }
+  }, [audio]);
 
   const handlerScrollEnd = (event) => {
     setTimeout(() => {
@@ -92,10 +108,6 @@ export const App = () => {
 
 
   useEffect(() => {
-    introSound ? setIntroStatus(SoundStatus.PLAYING) : setIntroStatus(SoundStatus.PAUSED);
-  }, [introSound]);
-
-  useEffect(() => {
     if (pageLoad) {
       setTimeout(() => {
         easyScroll({
@@ -113,10 +125,7 @@ export const App = () => {
 
   return (
     <Container ref={scrollRef}>
-      <Sound
-        url={IntroSound}
-        playStatus={introStatus}
-      />
+      {music}
       {final && <ConfettiWrapper>
         <Confetti
           width={width}

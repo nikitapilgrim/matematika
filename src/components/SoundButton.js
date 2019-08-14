@@ -1,6 +1,4 @@
-//TODO Sound does not loop. Just plays once.
-
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import IconOff from '../assets/svg/icon-speaker-off.svg';
 import IconOn from '../assets/svg/icon-speaker-on.svg';
@@ -15,15 +13,11 @@ const SoundContainer = styled.div`
   cursor: pointer;
 `;
 
-export const SoundButton = ({data}) => {
-  const [sound, setSound] = useState(data.state);
+export const SoundButton = ({state, onClick}) => {
 
   return (
-    <SoundContainer onClick={() => {
-      setSound(!sound);
-      data.action(!sound)
-    }}>
-      {sound ? <IconOn/> : <IconOff/>}
+    <SoundContainer onClick={onClick}>
+      {state ? <IconOn/> : <IconOff/>}
     </SoundContainer>
   );
 };
