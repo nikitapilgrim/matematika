@@ -10,7 +10,7 @@ export const Stage0202 = () => {
     <div>
       <Title>Ponavljanje gradiva</Title>
       <Subtitle>Računaj:</Subtitle>
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela2x5">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="3" align="center" className="fontclass tabela2x5">
         <tbody>
         <tr>
           <td className="desno">(36 + 18) : 9 =</td>
