@@ -68,15 +68,6 @@ export const App = () => {
     <source src={SoundManager.intro.acc} type="audio/acc"/>
   </audio>);
 
-  useEffect(() => {
-    if (audio.intro) {
-      controls.play()
-    }
-    if (audio.intro === false) {
-      controls.pause()
-    }
-  }, [audio]);
-
   const handlerScrollEnd = (event) => {
     setTimeout(() => {
       setShowStage(true);
@@ -97,6 +88,15 @@ export const App = () => {
      }, 1000);
  */
   };
+
+  useEffect(() => {
+    if (audio.intro) {
+      controls.play()
+    }
+    if (audio.intro === false) {
+      controls.pause()
+    }
+  }, [audio]);
 
   useEffect(() => {
     dispatch('setProgress', 5); // initial

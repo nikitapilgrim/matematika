@@ -12,6 +12,7 @@ const stage = store => {
     return ({final: state});
   });
   store.on('next', ({stage}, number) => {
+    console.log('next', stage)
     if (number === 0 || number) {
       return ({stage: number});
     }

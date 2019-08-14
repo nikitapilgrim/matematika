@@ -107,7 +107,7 @@ export const StageContainer = ({sounds, show}) => {
   return (
     <Container show={show} onSubmit={e => e.preventDefault()} onKeyUp={e => {
       const target = e.target;
-      const form = target.closest('form');
+      const form = target.closest('form span');
       const inputs = [...form.querySelectorAll('input')];
       const check = inputs.every((input) => {
         return input.classList.contains('valid');
