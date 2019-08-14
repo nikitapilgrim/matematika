@@ -59,13 +59,6 @@ const Inner = styled.div`
       flex-direction: column;
     }
   }
-  p {
-     font-size: 18px;
-     @media (max-width: 600px) {
-        margin: 2px 0;
-        font-size: 12px;
-      }
-  } 
 `;
 
 const ButtonNext = styled.button`
