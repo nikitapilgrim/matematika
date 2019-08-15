@@ -1,8 +1,6 @@
 import createStore from 'storeon';
 import Stages from '../components/stages/index';
 
-const Progress = window.nanobar;
-
 const stage = store => {
   store.on('@init', () => ({
     stage: 0,
@@ -12,7 +10,6 @@ const stage = store => {
     return ({final: state});
   });
   store.on('next', ({stage}, number) => {
-    console.log('next', stage)
     if (number === 0 || number) {
       return ({stage: number});
     }
@@ -43,7 +40,6 @@ const audio = store => {
 const progress = store => {
   store.on('@init', () => ({progress: 0}));
   store.on('setProgress', ({progress}, count) => {
-    Progress.go(count);
     return ({progress: count});
   });
 };

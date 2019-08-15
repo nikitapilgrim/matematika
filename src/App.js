@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Link, Route} from 'wouter';
-import easyScroll from 'easy-scroll';
 import Confetti from 'react-confetti';
 import useAudio from 'react-use/lib/useAudio';
 
@@ -15,7 +14,10 @@ import {store} from './store/store';
 import styled from 'styled-components';
 
 import {Background} from './components/Layout/Background';
+/*
 import {IntroLogo} from './components/IntroLogo';
+*/
+import {Preload} from './components/Preload';
 import {StageContainer} from './components/StageContainer';
 
 const Container = styled.div`
@@ -42,6 +44,11 @@ const ConfettiWrapper = styled.div`
   z-index: 1;
 `;
 
+const MusicContainer = styled.div`
+  position: absolute;
+  left: -99999px;
+`;
+
 
 // SOUNDS
 const SoundManager = {
@@ -50,7 +57,7 @@ const SoundManager = {
     acc: require('./assets/sounds/01.aac'),
     m4r: require('./assets/sounds/01.m4r'),
     ogg: require('./assets/sounds/01.oggvorbis.ogg'),
-  }
+  },
 };
 
 export const App = () => {
@@ -62,22 +69,24 @@ export const App = () => {
   const [showIntro, setShowIntro] = useState(false);
   const {width, height} = useWindowSize();
   const scrollRef = useRef(null);
-  const [music, state, controls, ref] = useAudio(<audio controls loop ref={ref}>
-    <source src={SoundManager.intro.mp3} type="audio/mpeg"/>
-    <source src={SoundManager.intro.ogg} type="audio/ogg"/>
-    <source src={SoundManager.intro.acc} type="audio/acc"/>
-  </audio>);
+  const [music, state, controls, ref] = useAudio(
+    <audio controls loop ref={ref}>
+      <source src={SoundManager.intro.mp3} type="audio/mpeg"/>
+      <source src={SoundManager.intro.ogg} type="audio/ogg"/>
+      <source src={SoundManager.intro.acc} type="audio/acc"/>
+    </audio>);
 
-  const handlerScrollEnd = (event) => {
-    setTimeout(() => {
-      setShowStage(true);
-    }, 1000);
-  };
 
   const handlerPageLoad = () => {
-    const container = document.querySelector('#progress-container');
-    dispatch('setProgress', 100); // final
-    container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
+    dispatch('setProgress', 100);
+    let interval;
+    let count = 5;
+    const animation = () => {
+      if (count === 100) clearInterval(interval);
+      dispatch('setProgress', count++);
+    };
+    interval = setInterval(animation, 10);
+    // final
     /* dispatch('setProgress', 100); // final
      setTimeout(() => {
        container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
@@ -91,50 +100,38 @@ export const App = () => {
 
   useEffect(() => {
     if (audio.intro) {
-      controls.play()
+      controls.play();
     }
     if (audio.intro === false) {
-      controls.pause()
+      controls.pause();
     }
   }, [audio]);
 
   useEffect(() => {
     dispatch('setProgress', 5); // initial
-    handlerPageLoad()
-/*
-    setTimeout(handlerPageLoad, 3000); // time to load resources
-*/
+    setTimeout(handlerPageLoad, 500);
+    /*
+        setTimeout(handlerPageLoad, 3000); // time to load resources
+    */
   }, []);
 
-
-  useEffect(() => {
-    if (pageLoad) {
-      setTimeout(() => {
-        easyScroll({
-          'scrollableDomEle': scrollRef.current,
-          'direction': 'bottom',
-          'duration': 1000,
-          'easingPreset': 'easeInQuad',
-          'scrollAmount': scrollRef.current.scrollHeight,
-          'onAnimationCompleteCallback': handlerScrollEnd,
-        });
-      }, 1000);
-
-    }
-  }, [pageLoad]);
-
   return (
-    <Container ref={scrollRef}>
-      {music}
-      {final && <ConfettiWrapper>
-        <Confetti
-          width={width}
-          height={height}
-        />
-      </ConfettiWrapper>}
-      <IntroLogo hide={/*showStage*/false} show={{/*showIntro*/}}/>
-      <StageContainer show={/*showStage*/true} sounds={{intro: {state: introSound, action: setIntroSound}}}/>
-      <Background blur={/*showStage*/ true}/>
+    <Container>
+      {
+        final && <ConfettiWrapper>
+          <Confetti
+            width={width}
+            height={height}
+          />
+        </ConfettiWrapper>
+      }
+      {progress === 100 ?
+        <StageContainer show={/*showStage*/true}/>
+        : <Preload/>
+      }
+      <MusicContainer>
+        {music}
+      </MusicContainer>
     </Container>
   );
 };

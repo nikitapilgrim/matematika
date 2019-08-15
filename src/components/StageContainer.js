@@ -1,12 +1,11 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useLayoutEffect, useState, useRef} from 'react';
 import {CSSTransitionGroup} from 'react-transition-group';
 import styled, {css, keyframes} from 'styled-components';
 import useStoreon from 'storeon/react';
 
+import {Menu} from './StageContainer/Menu';
 import BgStage from '../assets/svg/stage.svg';
-import {SoundButton} from './SoundButton';
 import Stages from './stages';
-
 
 const show = keyframes`
   0% {
@@ -16,6 +15,17 @@ const show = keyframes`
   100% {
       transform: scale(1);
       opacity: 1;
+  }
+`;
+
+const hide = keyframes`
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(.25);
+      opacity: 0;
   }
 `;
 
@@ -30,7 +40,7 @@ const Container = styled.form`
   width: 420px;
   font-family: 'Acme', sans-serif;
   opacity: 0;
-  animation: ${props => props.show && show} 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: ${props => props.show && show || hide} 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   @media (max-width: 600px) {
     height: 320px;
@@ -48,8 +58,8 @@ const Inner = styled.div`
   padding: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: white;
   overflow: hidden;
+  background-color: ${props => props.menu ? '#FDDD5C' : '#FFF'};
   > span {
     display: block;
     height: 100%;
@@ -61,15 +71,20 @@ const Inner = styled.div`
   }
 `;
 
+const StagesWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+
 const ButtonNext = styled.button`
   padding: 20px;
-`
+`;
 
 const StageInfo = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-`
+`;
 
 const SvgContainer = styled.div`
   position: absolute; 
@@ -85,39 +100,44 @@ const SvgContainer = styled.div`
   }
 `;
 
-const SoundWrapper = styled.div`
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  z-index: 3;
-   @media (max-width: 600px) {
-    left: 0;
-    top: -120px;
-  }
-  
-`;
-
 const ButtonTest = styled.input`
   padding: 20px;
 `;
 
-export const StageContainer = ({sounds, show}) => {
+const DebugContainer = styled.div`
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+`;
+
+export const StageContainer = ({show}) => {
   const {dispatch, stage, audio} = useStoreon('stage', 'audio');
+  const [showMenu, setShowMenu] = useState(true);
+  const [showStage, setShowStage] = useState(show);
+
+  const handlerStart = () => {
+    setShowStage(false);
+    setTimeout(() => {
+      setShowMenu(false);
+      setShowStage(true);
+    }, 300);
+  };
+
+  const handlerCheckAnswers = () => {
+    const target = e.target;
+    const form = target.closest('form span');
+    const inputs = [...form.querySelectorAll('input')];
+    const check = inputs.every((input) => {
+      return input.classList.contains('valid');
+    });
+    if (check) dispatch('next');
+  };
 
   return (
-    <Container show={show} onSubmit={e => e.preventDefault()} onKeyUp={e => {
-      const target = e.target;
-      const form = target.closest('form span');
-      const inputs = [...form.querySelectorAll('input')];
-      const check = inputs.every((input) => {
-        return input.classList.contains('valid');
-      });
-      if (check) dispatch('next');
-    }}>
-      <SoundWrapper>
-        <SoundButton onClick={() => {
-          audio.intro ? dispatch('intro/off') : dispatch('intro/on')
-        }} state={audio.intro}/>
+    <Container show={showStage} onSubmit={e => e.preventDefault()} onKeyUp={handlerCheckAnswers}>
+      <DebugContainer className="debug">
+        <StageInfo>{stage}</StageInfo>
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
         }}/>
@@ -126,24 +146,27 @@ export const StageContainer = ({sounds, show}) => {
         }}>
           next
         </ButtonNext>
-        <StageInfo>{stage}</StageInfo>
-      </SoundWrapper>
+      </DebugContainer>
       <SvgContainer>
         <BgStage/>
       </SvgContainer>
-      <Inner>
-        <CSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-          {Stages.map((Stage, index) => {
-            if (index === stage) {
-              return (
-                <Stage key={index}/>
-              );
-            }
-          })}
-        </CSSTransitionGroup>
+      <Inner menu={showMenu}>
+        {showMenu ? <Menu start={handlerStart}/>
+          :
+          <>
+            <CSSTransitionGroup
+              transitionName="example"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={300}>
+              {Stages.map((Stage, index) => {
+                if (index === stage) {
+                  return (
+                    <Stage key={index}/>
+                  );
+                }
+              })}
+            </CSSTransitionGroup>
+          </>}
       </Inner>
     </Container>
   );

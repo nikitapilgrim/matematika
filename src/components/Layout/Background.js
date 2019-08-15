@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
+/*
 import Bg from '../../assets/svg/background-extended.svg';
+*/
 import BgIMG from '../../assets/img/background-standard.jpg';
 
 
@@ -13,7 +15,7 @@ const blured = keyframes`
   }
 `;
 
-
+/*
 const Container = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
@@ -30,7 +32,7 @@ const Container = styled.div`
    @media (max-width: 600px) {
     width: 920px;
   }
-`;
+`;*/
 
 export const ContainerIMG = styled.div`
   position: absolute;
@@ -41,7 +43,9 @@ export const ContainerIMG = styled.div`
   left: 0%;
   right: 0;
   bottom: 0;
+  /*
   filter: blur(8px);
+  */
   background: url(${BgIMG}) no-repeat center center fixed; 
   background-size: cover;
 `;
@@ -49,8 +53,6 @@ export const ContainerIMG = styled.div`
 export const Background = ({blur}) => {
 
   return (
-    <Container blur={blur}>
-      <Bg/>
-    </Container>
+    <ContainerIMG blur={blur}/>
   );
 };
