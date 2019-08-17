@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Link, Route} from 'wouter';
 import Confetti from 'react-confetti';
+import DOMConfetti from 'react-dom-confetti';
 import useAudio from 'react-use/lib/useAudio';
 
 import StoreContext from 'storeon/react/context';
@@ -13,7 +14,7 @@ import {store} from './store/store';
 
 import styled from 'styled-components';
 
-import {Background} from './components/Layout/Background';
+import {Blured} from './components/Layout/Background';
 /*
 import {IntroLogo} from './components/IntroLogo';
 */
@@ -38,6 +39,9 @@ const Container = styled.div`
 `;
 
 const ConfettiWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -67,6 +71,7 @@ export const App = () => {
   const [introStatus, setIntroStatus] = useState(null);
   const [showStage, setShowStage] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
+  const [nextStage, setNextStage] = useState(false);
   const {width, height} = useWindowSize();
   const scrollRef = useRef(null);
   const [music, state, controls, ref] = useAudio(
@@ -76,16 +81,29 @@ export const App = () => {
       <source src={SoundManager.intro.acc} type="audio/acc"/>
     </audio>);
 
+  const config = {
+    angle: 90,
+    spread: 90,
+    startVelocity: 45,
+    elementCount: 50,
+    dragFriction: 0.1,
+    duration: 3000,
+    stagger: 0,
+    width: "20px",
+    height: "20px",
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+  };
 
   const handlerPageLoad = () => {
     dispatch('setProgress', 100);
     let interval;
     let count = 5;
-    const animation = () => {
+
+    /*const animation = () => {
       if (count === 100) clearInterval(interval);
       dispatch('setProgress', count++);
     };
-    interval = setInterval(animation, 10);
+    interval = setInterval(animation, 10);*/
     // final
     /* dispatch('setProgress', 100); // final
      setTimeout(() => {
@@ -126,12 +144,16 @@ export const App = () => {
         </ConfettiWrapper>
       }
       {progress === 100 ?
-        <StageContainer show={/*showStage*/true}/>
+        <StageContainer next={setNextStage} show={/*showStage*/true}/>
         : <Preload/>
       }
+      <ConfettiWrapper>
+        <DOMConfetti active={nextStage} config={config}/>
+      </ConfettiWrapper>
       <MusicContainer>
         {music}
       </MusicContainer>
+      <Blured blur={true}/>
     </Container>
   );
 };

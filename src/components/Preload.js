@@ -7,6 +7,7 @@ const TitleContainer = styled.div`
   position: relative;
   width: 75vw;
   z-index: 1;
+  max-width: 600px;
 `;
 
 const ProgressWrapper = styled.div`
@@ -51,10 +52,10 @@ export const Preload = () => {
   const {dispatch, progress} = useStoreon('progress');
 
   return (
-    <TitleContainer>
+    <TitleContainer className="progress-container">
       <Title/>
-      <ProgressWrapper>
-        <Progress progress={progress}>
+      <ProgressWrapper className="progress-wrapper">
+        <Progress progress={progress} className="progress">
           <Count>{progress}%</Count>
         </Progress>
       </ProgressWrapper>

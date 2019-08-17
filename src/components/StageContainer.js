@@ -1,5 +1,6 @@
 import React, {useEffect, useLayoutEffect, useState, useRef} from 'react';
 import {CSSTransitionGroup} from 'react-transition-group';
+import useUpdateEffect from 'react-use/lib/useUpdateEffect';
 import styled, {css, keyframes} from 'styled-components';
 import useStoreon from 'storeon/react';
 
@@ -35,7 +36,7 @@ const Container = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  top: auto;
+  top: 35%;
   height: 480px;
   width: 420px;
   font-family: 'Acme', sans-serif;
@@ -111,10 +112,24 @@ const DebugContainer = styled.div`
   left: 0;
 `;
 
-export const StageContainer = ({show}) => {
+export const StageContainer = ({show, next}) => {
   const {dispatch, stage, audio} = useStoreon('stage', 'audio');
   const [showMenu, setShowMenu] = useState(true);
   const [showStage, setShowStage] = useState(show);
+
+  const stagesRef = useRef(null);
+
+  useEffect(() => {
+    if (stagesRef.current) {
+      next(false);
+      setTimeout(() => {
+        const div = stagesRef.current;
+        const input = div.querySelector('input');
+        input.focus();
+        next(true);
+      }, 300);
+    }
+  }, [stage, showMenu]);
 
   const handlerStart = () => {
     setShowStage(false);
@@ -124,7 +139,7 @@ export const StageContainer = ({show}) => {
     }, 300);
   };
 
-  const handlerCheckAnswers = () => {
+  const handlerCheckAnswers = (e) => {
     const target = e.target;
     const form = target.closest('form span');
     const inputs = [...form.querySelectorAll('input')];
@@ -135,7 +150,8 @@ export const StageContainer = ({show}) => {
   };
 
   return (
-    <Container show={showStage} onSubmit={e => e.preventDefault()} onKeyUp={handlerCheckAnswers}>
+    <Container className='stage-container' show={showStage} onSubmit={e => e.preventDefault()}
+               onKeyUp={handlerCheckAnswers}>
       <DebugContainer className="debug">
         <StageInfo>{stage}</StageInfo>
         <ButtonTest onChange={(e) => {
@@ -153,7 +169,7 @@ export const StageContainer = ({show}) => {
       <Inner menu={showMenu}>
         {showMenu ? <Menu start={handlerStart}/>
           :
-          <>
+          <div ref={stagesRef}>
             <CSSTransitionGroup
               transitionName="example"
               transitionEnterTimeout={500}
@@ -166,7 +182,7 @@ export const StageContainer = ({show}) => {
                 }
               })}
             </CSSTransitionGroup>
-          </>}
+          </div>}
       </Inner>
     </Container>
   );

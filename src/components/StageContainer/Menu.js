@@ -39,8 +39,6 @@ export const Menu = ({children, start}) => {
 
   return (
     <MenuWrapper>
-      <Title>Ime Prezime</Title>
-      <Subtitle>llustracija: ime Prezime</Subtitle>
       <SoundWrapper>
         <SoundButton onClick={() => {
           audio.intro ? dispatch('intro/off') : dispatch('intro/on');

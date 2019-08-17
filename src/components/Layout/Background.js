@@ -34,25 +34,24 @@ const Container = styled.div`
   }
 `;*/
 
-export const ContainerIMG = styled.div`
+export const Blur = styled.div`
   position: absolute;
   z-index: 0;
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0%;
+  left: 0;
   right: 0;
   bottom: 0;
   /*
   filter: blur(8px);
   */
-  background: url(${BgIMG}) no-repeat center center fixed; 
+  animation: ${props => props.blur && blured} 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   background-size: cover;
 `;
 
-export const Background = ({blur}) => {
-
+export const Blured = ({blur}) => {
   return (
-    <ContainerIMG blur={blur}/>
+    <Blur blur={blur} className='background-app'/>
   );
 };
