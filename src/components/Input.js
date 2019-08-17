@@ -16,19 +16,31 @@ const InputStyled = styled.input`
     }
 `;
 
-export const Input = ({answer, className}) => {
+export const Input = ({answer, className, onKeyUp, customAnswer}) => {
   const [valid, setValid] = useState(false);
   const [unValid, setUnvalid] = useState(false);
 
   const classNames = cx('input', className, {'valid': valid}, {'unvalid': unValid});
 
   const handlerKeyUp = e => {
-    if (e.target.value === answer) {
-      setValid(true);
-      setUnvalid(false);
-    } else {
-      setValid(false);
-      setUnvalid(true);
+    if (onKeyUp) onKeyUp(e);
+    if (!customAnswer) {
+      if (e.target.value === answer) {
+        setValid(true);
+        setUnvalid(false);
+      } else {
+        setValid(false);
+        setUnvalid(true);
+      }
+    }
+    if (customAnswer) {
+      if (customAnswer()) {
+        setValid(true);
+        setUnvalid(false);
+      } else {
+        setValid(false);
+        setUnvalid(true);
+      }
     }
   };
 
