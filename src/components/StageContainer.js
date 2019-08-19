@@ -2,11 +2,15 @@ import React, {useEffect, useLayoutEffect, useState, useRef} from 'react';
 import {CSSTransitionGroup} from 'react-transition-group';
 import useUpdateEffect from 'react-use/lib/useUpdateEffect';
 import styled, {css, keyframes} from 'styled-components';
+import UIfx from 'uifx';
 import useStoreon from 'storeon/react';
+import nextStageSound from '../assets/sounds/next-stage_01.mp3';
 
 import {Menu} from './StageContainer/Menu';
 import BgStage from '../assets/svg/stage.svg';
 import Stages from './stages';
+
+const SoundStage = new UIfx(nextStageSound);
 
 const show = keyframes`
   0% {
@@ -60,7 +64,7 @@ const Inner = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   overflow: hidden;
-  background-color: ${props => props.menu ? '#FDDD5C' : '#FFF'};
+  background-color: ${props => props.menu ? '#C2DC9F' : '#FFF'};
   > span {
     display: block;
     height: 100%;
@@ -122,6 +126,7 @@ export const StageContainer = ({show, next}) => {
   useEffect(() => {
     if (stagesRef.current) {
       next(false);
+      SoundStage.play();
       setTimeout(() => {
         const div = stagesRef.current;
         const input = div.querySelector('input');
@@ -142,11 +147,13 @@ export const StageContainer = ({show, next}) => {
   const handlerCheckAnswers = (e) => {
     const target = e.target;
     const form = target.closest('form span');
-    const inputs = [...form.querySelectorAll('input')];
-    const check = inputs.every((input) => {
-      return input.classList.contains('valid');
-    });
-    if (check) dispatch('next');
+    setTimeout(() => {
+      const inputs = [...form.querySelectorAll('input')];
+      const check = inputs.every((input) => {
+        return input.classList.contains('valid');
+      });
+      if (check) dispatch('next');
+    }, 50)
   };
 
   return (

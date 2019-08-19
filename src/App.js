@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Link, Route} from 'wouter';
 import Confetti from 'react-confetti';
-import DOMConfetti from 'react-dom-confetti';
+import DOMConfetti from './lib/confetti';
 import useAudio from 'react-use/lib/useAudio';
 
 import StoreContext from 'storeon/react/context';
@@ -89,8 +89,8 @@ export const App = () => {
     dragFriction: 0.1,
     duration: 3000,
     stagger: 0,
-    width: "20px",
-    height: "20px",
+    width: '20px',
+    height: '20px',
     colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import cx from 'classnames';
 
@@ -16,25 +16,29 @@ const InputStyled = styled.input`
     }
 `;
 
-export const Input = ({answer, className, onKeyUp, customAnswer}) => {
-  const [valid, setValid] = useState(false);
+export const Input = ({answer, className, onKeyUp, valid, id}) => {
+  const [validate, setValid] = useState(false);
   const [unValid, setUnvalid] = useState(false);
 
-  const classNames = cx('input', className, {'valid': valid}, {'unvalid': unValid});
+  const classNames = cx('input', className, {'valid': validate}, {'unvalid': unValid});
 
-  const handlerKeyUp = e => {
-    if (onKeyUp) onKeyUp(e);
-    if (!customAnswer) {
-      if (e.target.value === answer) {
+  useEffect(() => {
+    if (!answer) {
+      if (valid === true) {
         setValid(true);
         setUnvalid(false);
-      } else {
+      }
+      if (valid === false) {
         setValid(false);
         setUnvalid(true);
       }
     }
-    if (customAnswer) {
-      if (customAnswer()) {
+  }, [valid]);
+
+  const handlerKeyUp = e => {
+    if (onKeyUp) onKeyUp(e);
+    if (answer) {
+      if (e.target.value === answer) {
         setValid(true);
         setUnvalid(false);
       } else {
@@ -45,6 +49,6 @@ export const Input = ({answer, className, onKeyUp, customAnswer}) => {
   };
 
   return (
-    <InputStyled valid={valid} unvalid={unValid} className={classNames} onKeyUp={handlerKeyUp}/>
+    <InputStyled onKeyUp={handlerKeyUp} className={classNames}/>
   );
 };

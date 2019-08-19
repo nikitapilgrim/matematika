@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 
 import {StageWrapper} from '../Layout/StageWrapper';
 import {Input} from '../Input';
@@ -11,20 +11,59 @@ const arrayWithoutElementAtIndex = (arr, index) => {
   });
 };
 
-const getAllValues = object => Object.entries(object).reduce((acc, pair) => {
-  const [key, value] = pair;
-  return [...acc, value.value];
-}, []);
-
+const defaultValue = {
+  1: {
+    valid: '',
+  },
+  2: {
+    valid: '',
+  },
+  3: {
+    valid: '',
+  },
+  4: {
+    valid: '',
+  },
+  5: {
+    valid: '',
+  },
+  6: {
+    valid: '',
+  },
+};
 
 export const Stage0304 = () => {
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState(defaultValue);
+  const [renderAnswers, setRenderAnswers] = useState(answers);
   const allowedNumbers = [1, 3, 5];
-  const [arrayAnswer, setArrayAnswer] = useState([]);
+  const [currentValue, setCurrentValue] = useState(null);
+
   useEffect(() => {
-    setArrayAnswer(getAllValues(answers));
-  }, [answers]);
-  console.log(answers, arrayAnswer);
+    Object.entries(answers).every((pair, index, array) => {
+      const [key, value] = pair;
+      // we get an object of values ​​without the last
+      const checkedObject = arrayWithoutElementAtIndex(array, index);
+      // only value
+      const checkedArray = checkedObject.reduce((acc, item) => {
+        return [...acc, item[1].value];
+      }, []);
+      const checkDoubleItems = checkedArray.includes(value.value);
+      if (!checkDoubleItems) {
+        let copy = {...answers};
+        copy[key].valid = true;
+        setRenderAnswers({...answers, ...copy});
+        return true;
+      }
+      if (value.value && checkDoubleItems) {
+        let copy = {...answers};
+        copy[key].valid = false;
+        setRenderAnswers({...answers, ...copy});
+        return false;
+      }
+    });
+  }, [answers, currentValue]);
+
+
 
   const handlerAnswer = id => e => {
     const value = e.target.value;
@@ -41,27 +80,7 @@ export const Stage0304 = () => {
             value: value,
           },
         });
-      }
-    }
-  };
-
-  const checkAnswer = id => () => {
-    if (answers[id]) {
-      const check = Object.entries(answers).every((pair, index, array) => {
-        const [key, value] = pair;
-        const checkedObject = arrayWithoutElementAtIndex(array, --id);
-        const checkedArray = checkedObject.reduce((acc, item) => {
-          return [...acc, item[1].value];
-        }, []);
-        const checkDoubleItems = checkedArray.includes(value.value);
-        return !checkDoubleItems;
-      });
-      console.log(id, check)
-      if (check) {
-        return true;
-      }
-      if (!check) {
-        return false
+        setCurrentValue(value);
       }
     }
   };
@@ -75,20 +94,26 @@ export const Stage0304 = () => {
       <table border="0" cellSpacing="0" cellPadding="3" align="center" className="col3_table">
         <tbody>
         <tr>
-          <td className="col3_table_cell"><Input customAnswer={checkAnswer(1)}
-                                                 onKeyUp={handlerAnswer(1)}/></td>
-          <td className="col3_table_cell"><Input customAnswer={checkAnswer(2)}
-                                                 onKeyUp={handlerAnswer(2)}/></td>
-          <td className="col3_table_cell"><Input customAnswer={checkAnswer(3)}
-                                                 onKeyUp={handlerAnswer(3)}/></td>
+          {Object.entries(renderAnswers).map((item) => {
+            const [k, v] = item;
+            if (k <= 3) {
+              return (
+                <td className="col3_table_cell" key={k}><Input valid={renderAnswers[k].valid}
+                                                               onKeyUp={handlerAnswer(k)} id={k}/></td>
+              );
+            }
+          })}
         </tr>
         <tr>
-          <td className="col3_table_cell"><Input customAnswer={checkAnswer(4)}
-                                                 onKeyUp={handlerAnswer(4)}/></td>
-          <td className="col3_table_cell"><Input customAnswer={checkAnswer(5)}
-                                                 onKeyUp={handlerAnswer(5)}/></td>
-          <td className="col3_table_cell"><Input customAnswer={checkAnswer(6)}
-                                                 onKeyUp={handlerAnswer(6)}/></td>
+          {Object.entries(renderAnswers).map((item) => {
+            const [k, v] = item;
+            if (k > 3) {
+              return (
+                <td className="col3_table_cell" key={k}><Input valid={renderAnswers[k].valid}
+                                                               onKeyUp={handlerAnswer(k)} id={k}/></td>
+              );
+            }
+          })}
         </tr>
 
         </tbody>
