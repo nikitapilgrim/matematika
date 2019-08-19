@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Link, Route} from 'wouter';
 import Confetti from 'react-confetti';
-import DOMConfetti from './lib/confetti';
+import DOMConfetti from './components/effects/index';
 import useAudio from 'react-use/lib/useAudio';
 
 import StoreContext from 'storeon/react/context';
