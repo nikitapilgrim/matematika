@@ -7,13 +7,46 @@ function createElements(root, elementCount, colors, width, height) {
     const after = document.createElement('div');
     element.appendChild(before);
     element.appendChild(after);
+
+    before.style.borderBottom = '80px solid red';
+    before.style.borderLeft = '30px solid transparent';
+    before.style.borderRight = '30px solid transparent';
+    before.style.position = 'absolute';
+    before.style.height = '0px';
+    before.style.width = '0px';
+    before.style.top = '-45px';
+    before.style.left = '-65px';
+    before.style.transform = 'rotate(-35deg);';
+
+    after.style.borderBottom = '70px solid red';
+    after.style.borderLeft = '100px solid transparent';
+    after.style.borderRight = '100px solid transparent';
+    after.style.position = 'absolute';
+    after.style.height = '0px';
+    after.style.width = '0px';
+    after.style.top = '3px';
+    after.style.left = '-105px';
+    after.style.transform = 'rotate(-70deg)';
+    after.style.color = 'color: red';
+
     const color = colors[index % colors.length];
-    element.style['background-color'] = color; // eslint-disable-line space-infix-ops
+    //element.style['background-color'] = color; // eslint-disable-line space-infix-ops
     element.style.width = width;
     element.style.height = height;
     element.style.position = 'absolute';
     element.style.willChange = 'transform, opacity';
     element.style.visibility = 'hidden';
+
+    element.style.margin = '50px 0';
+    element.style.position = 'relative';
+    element.style.color = 'red';
+    element.style.width = '0px';
+    element.style.height = '0px';
+    element.style.borderBottom = '70px solid red';
+    element.style.borderLeft = '100px solid transparent';
+    element.style.borderRight = '100px solid transparent';
+    element.style.transform = 'rotate(35deg)';
+
     root.appendChild(element);
     return element;
   });
