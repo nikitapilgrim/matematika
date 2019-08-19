@@ -82,15 +82,15 @@ export const App = () => {
     </audio>);
 
   const config = {
-    angle: 90,
-    spread: 90,
-    startVelocity: 45,
-    elementCount: 50,
-    dragFriction: 0.1,
-    duration: 3000,
-    stagger: 0,
-    width: '20px',
-    height: '20px',
+    angle: "90",
+    spread: "100",
+    startVelocity: "62",
+    elementCount: 100,
+    dragFriction: "0.21",
+    duration: "2630",
+    stagger: "0",
+    width: "10px",
+    height: "10px",
     colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
 
