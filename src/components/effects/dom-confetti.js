@@ -5,47 +5,43 @@ function createElements(root, elementCount, colors, width, height) {
     const element = document.createElement('div');
     const before = document.createElement('div');
     const after = document.createElement('div');
+    const color = colors[index % colors.length];
     element.appendChild(before);
     element.appendChild(after);
 
-    before.style.borderBottom = '80px solid red';
-    before.style.borderLeft = '30px solid transparent';
-    before.style.borderRight = '30px solid transparent';
+    before.style.borderBottom = `.7em solid ${color}`;
+    before.style.borderLeft = '1em solid transparent';
+    before.style.borderRight = '1em solid transparent';
     before.style.position = 'absolute';
     before.style.height = '0px';
     before.style.width = '0px';
-    before.style.top = '-45px';
-    before.style.left = '-65px';
-    before.style.transform = 'rotate(-35deg);';
+    before.style.top = '.6em';
+    before.style.left = '-1em';
+    before.style.transform = 'rotate(-35deg)';
 
-    after.style.borderBottom = '70px solid red';
-    after.style.borderLeft = '100px solid transparent';
-    after.style.borderRight = '100px solid transparent';
+    after.style.borderBottom = `.7em solid ${color}`;
+    after.style.borderLeft = '1em solid transparent';
+    after.style.borderRight = '1em solid transparent';
     after.style.position = 'absolute';
     after.style.height = '0px';
     after.style.width = '0px';
-    after.style.top = '3px';
-    after.style.left = '-105px';
-    after.style.transform = 'rotate(-70deg)';
-    after.style.color = 'color: red';
+    after.style.top = '.6em';
+    after.style.left = '-1em';
+    after.style.transform = 'rotate(35deg)';
 
-    const color = colors[index % colors.length];
-    //element.style['background-color'] = color; // eslint-disable-line space-infix-ops
-    element.style.width = width;
-    element.style.height = height;
     element.style.position = 'absolute';
     element.style.willChange = 'transform, opacity';
     element.style.visibility = 'hidden';
-
-    element.style.margin = '50px 0';
+    element.style.marginLeft = '.9em';
+    element.style.marginRight = '.9em';
+    element.style.marginBottom = '1.2em';
     element.style.position = 'relative';
-    element.style.color = 'red';
     element.style.width = '0px';
     element.style.height = '0px';
-    element.style.borderBottom = '70px solid red';
-    element.style.borderLeft = '100px solid transparent';
-    element.style.borderRight = '100px solid transparent';
-    element.style.transform = 'rotate(35deg)';
+    element.style.borderBottom = `.7em solid ${color}`;
+    element.style.borderRight = '.3em solid transparent';
+    element.style.borderLeft = '.3em solid transparent';
+    element.style.fontSize = '24px';
 
     root.appendChild(element);
     return element;

@@ -1,9 +1,15 @@
-import React, { Component, useRef, useState } from "react";
-import { confetti } from './dom-confetti'
+import React, {Component, useRef, useState} from 'react';
+import styled from 'styled-components';
+import {confetti} from './dom-confetti';
 
-const style = {
-  position: "relative"
-};
+const Wrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default class Confetti extends Component {
   constructor(props) {
@@ -23,7 +29,7 @@ export default class Confetti extends Component {
 
   render() {
     return (
-      <div className={this.props.className} style={style} ref={this.setRef} />
+      <Wrapper className={this.props.className} ref={this.setRef}/>
     );
   }
 }
