@@ -10,6 +10,9 @@ import {Menu} from './StageContainer/Menu';
 import BgStage from '../assets/svg/stage.svg';
 import Stages from './stages';
 
+import keyUpSound from '../assets/sounds/button_01.mp3';
+
+const SoundKeyUp = new UIfx(keyUpSound);
 const SoundStage = new UIfx(nextStageSound);
 
 const show = keyframes`
@@ -150,16 +153,23 @@ export const StageContainer = ({show, next}) => {
     setTimeout(() => {
       const inputs = [...form.querySelectorAll('input')];
       const check = inputs.every((input) => {
-        return input.classList.contains('valid');
+        const valid = input.classList.contains('valid');
+        if (!valid) {
+          input.focus();
+        }
+        return valid;
       });
       if (check) dispatch('next');
-    }, 50)
+    }, 50);
   };
 
   return (
     <Container className='stage-container' show={showStage} onSubmit={e => e.preventDefault()}
+               onKeyDown={(e) => {
+                 SoundKeyUp.play();
+               }}
                onKeyUp={handlerCheckAnswers}>
-      <DebugContainer className="debug">
+      {/* <DebugContainer className="debug">
         <StageInfo>{stage}</StageInfo>
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
@@ -169,7 +179,7 @@ export const StageContainer = ({show, next}) => {
         }}>
           next
         </ButtonNext>
-      </DebugContainer>
+      </DebugContainer>*/}
       <SvgContainer>
         <BgStage/>
       </SvgContainer>
