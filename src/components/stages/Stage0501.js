@@ -26,15 +26,14 @@ export const Stage0501 = () => {
         </tr>
         <tr>
           <td><Input className="topborder" answer="732"/></td>
-          <td><Input className="topborder"  answer="500"/></td>
-          <td><Input className="topborder"  answer="482"/></td>
-          <td><Input className="topborder"  answer="267"/></td>
+          <td><Input className="topborder" answer="500"/></td>
+          <td><Input className="topborder" answer="482"/></td>
+          <td><Input className="topborder" answer="267"/></td>
         </tr>
         </tbody>
       </table>
 
-      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4x3"
-             style="margin-top: 20px;">
+      <table width="100%" border="0" cellSpacing="2" cellPadding="0" align="center" className="fontclass tabela4x3">
         <tbody>
         <tr>
           <td>396</td>

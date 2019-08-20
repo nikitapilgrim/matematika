@@ -96,23 +96,21 @@ export const App = () => {
 
   const handlerPageLoad = () => {
     let interval;
-    let count = 5;
-    dispatch('setProgress', 100);
-    /*
-        const animation = () => {
-          if (count === 100) clearInterval(interval);
-          dispatch('setProgress', count++);
-        };
-        interval = setInterval(animation, 10);
-        // final
-         dispatch('setProgress', 100); // final
-         setTimeout(() => {
-           container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
-           setShowIntro(true);
-           setTimeout(() => {
-             setPageLoad(true);
-           }, 2000);
-         }, 1000);*/
+    let count = 0;
+    const animation = () => {
+      if (count === 100) clearInterval(interval);
+      dispatch('setProgress', count++);
+    };
+    interval = setInterval(animation, 10);
+    // final
+    dispatch('setProgress', 100); // final
+    setTimeout(() => {
+      container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
+      setShowIntro(true);
+      setTimeout(() => {
+        setPageLoad(true);
+      }, 2000);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -156,7 +154,7 @@ export const App = () => {
         setShowIntro(false);
         setTimeout(() => {
           setShowStageContainer(true);
-        }, 500)
+        }, 500);
       }, 3000);
     }
   }, [stage]);

@@ -68,15 +68,6 @@ const Inner = styled.div`
   padding-right: 10px;
   overflow: hidden;
   background-color: ${props => props.menu ? '#C2DC9F' : '#FFF'};
-  > span {
-    display: block;
-    height: 100%;
-    > div {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-  }
 `;
 
 const StagesWrapper = styled.div`
@@ -117,6 +108,18 @@ const DebugContainer = styled.div`
   z-index: 999;
   top: 0;
   left: 0;
+`;
+
+const InnerInside = styled.div`
+  height: 100%;
+  width: 100%;
+  > span {
+    display: block;
+    height: 100%;
+    > div {
+      height: 100%;
+    }
+  }
 `;
 
 export const StageContainer = ({show, next, onStart}) => {
@@ -178,7 +181,7 @@ export const StageContainer = ({show, next, onStart}) => {
                  SoundKeyUp.play();
                }}
                onKeyUp={handlerCheckAnswers}>
-       <DebugContainer className="debug">
+       {/*<DebugContainer className="debug">
         <StageInfo>{stage}</StageInfo>
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
@@ -188,14 +191,14 @@ export const StageContainer = ({show, next, onStart}) => {
         }}>
           next
         </ButtonNext>
-      </DebugContainer>
+      </DebugContainer>*/}
       <SvgContainer>
         <BgStage/>
       </SvgContainer>
       <Inner menu={showMenu}>
         {showMenu ? <Menu start={handlerStart}/>
           :
-          <div ref={stagesRef}>
+          <InnerInside ref={stagesRef}>
             <CSSTransitionGroup
               transitionName="example"
               transitionEnterTimeout={500}
@@ -208,7 +211,7 @@ export const StageContainer = ({show, next, onStart}) => {
                 }
               })}
             </CSSTransitionGroup>
-          </div>}
+          </InnerInside>}
       </Inner>
     </Container>
   );
