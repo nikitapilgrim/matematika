@@ -102,15 +102,6 @@ export const App = () => {
       dispatch('setProgress', count++);
     };
     interval = setInterval(animation, 10);
-    // final
-    dispatch('setProgress', 100); // final
-    setTimeout(() => {
-      container.style.transform = 'translate(-9999px,-9999px)'; // hide preload
-      setShowIntro(true);
-      setTimeout(() => {
-        setPageLoad(true);
-      }, 2000);
-    }, 1000);
   };
 
   useEffect(() => {
@@ -129,6 +120,13 @@ export const App = () => {
     */
   }, []);
 
+  // If the game does not start and the application is downloaded
+  useEffect(() => {
+    if (progress === 100 && !gameStart) {
+      setShowStageContainer(true);
+    }
+  }, [progress, gameStart]);
+
   useEffect(() => {
     const introShowArr = [0, 4, 8, 15, 24, 29, 34, 41, 47, 54, 59, 65, 69];
     const texts = {
@@ -146,19 +144,20 @@ export const App = () => {
       65: 'Test 12',
       69: 'Test 13',
     };
-    if (introShowArr.includes(stage)) {
+    if (gameStart && introShowArr.includes(stage)) {
       setTextIntro(texts[stage]);
       setShowIntro(true);
-      setShowStageContainer(false);
       setTimeout(() => {
         setShowIntro(false);
-        setTimeout(() => {
-          setShowStageContainer(true);
-        }, 500);
       }, 3000);
     }
-  }, [stage]);
+  }, [gameStart]);
 
+  useEffect(() => {
+    showIntro ? setShowStageContainer(false) : setShowStageContainer(true);
+  }, [showIntro]);
+
+  
   return (
     <Container>
       {
@@ -176,7 +175,6 @@ export const App = () => {
         </>
         : <Preload/>
       }
-
       <ConfettiWrapper>
         <DOMConfetti active={nextStage} config={config}/>
       </ConfettiWrapper>

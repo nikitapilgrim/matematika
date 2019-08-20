@@ -47,6 +47,7 @@ const Container = styled.form`
   height: 480px;
   width: 420px;
   font-family: 'Acme', sans-serif;
+  transform: scale(.25);
   opacity: 0;
   animation: ${props => props.show && show || hide} 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
@@ -176,12 +177,12 @@ export const StageContainer = ({show, next, onStart}) => {
   }, [show]);
 
   return (
-    <Container className='stage-container' show={showStage} onSubmit={e => e.preventDefault()}
+    <Container className='stage-container' show={show} onSubmit={e => e.preventDefault()}
                onKeyDown={(e) => {
                  SoundKeyUp.play();
                }}
                onKeyUp={handlerCheckAnswers}>
-       {/*<DebugContainer className="debug">
+       <DebugContainer className="debug">
         <StageInfo>{stage}</StageInfo>
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
@@ -191,7 +192,7 @@ export const StageContainer = ({show, next, onStart}) => {
         }}>
           next
         </ButtonNext>
-      </DebugContainer>*/}
+      </DebugContainer>
       <SvgContainer>
         <BgStage/>
       </SvgContainer>

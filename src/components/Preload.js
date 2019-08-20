@@ -6,7 +6,7 @@ import useStoreon from 'storeon/react';
 const TitleContainer = styled.div`
   position: relative;
   width: 75vw;
-  z-index: 1;
+  z-index: 999;
   max-width: 600px;
 `;
 
