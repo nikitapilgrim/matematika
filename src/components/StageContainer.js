@@ -119,7 +119,7 @@ const DebugContainer = styled.div`
   left: 0;
 `;
 
-export const StageContainer = ({show, next}) => {
+export const StageContainer = ({show, next, onStart}) => {
   const {dispatch, stage, audio} = useStoreon('stage', 'audio');
   const [showMenu, setShowMenu] = useState(true);
   const [showStage, setShowStage] = useState(show);
@@ -140,6 +140,7 @@ export const StageContainer = ({show, next}) => {
   }, [stage, showMenu]);
 
   const handlerStart = () => {
+    onStart();
     setShowStage(false);
     setTimeout(() => {
       setShowMenu(false);
@@ -163,13 +164,21 @@ export const StageContainer = ({show, next}) => {
     }, 50);
   };
 
+  useEffect(() => {
+    if (show) {
+      setShowStage(true);
+    } else {
+      setShowStage(false);
+    }
+  }, [show]);
+
   return (
     <Container className='stage-container' show={showStage} onSubmit={e => e.preventDefault()}
                onKeyDown={(e) => {
                  SoundKeyUp.play();
                }}
                onKeyUp={handlerCheckAnswers}>
-      {/* <DebugContainer className="debug">
+       <DebugContainer className="debug">
         <StageInfo>{stage}</StageInfo>
         <ButtonTest onChange={(e) => {
           dispatch('next', Number(e.target.value));
@@ -179,7 +188,7 @@ export const StageContainer = ({show, next}) => {
         }}>
           next
         </ButtonNext>
-      </DebugContainer>*/}
+      </DebugContainer>
       <SvgContainer>
         <BgStage/>
       </SvgContainer>
